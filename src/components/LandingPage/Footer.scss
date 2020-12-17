@@ -1,0 +1,9 @@
+@import "../../pages/Template/variables";
+@import "../../pages/Template/mixin";
+
+.footer {
+  background-color: $lighterBlack;
+  margin-top: 5vh;
+  padding: 10px;
+  text-align: center;
+}

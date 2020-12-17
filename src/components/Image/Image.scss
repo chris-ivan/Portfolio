@@ -2,13 +2,13 @@
 @import "../../pages/Template/mixin";
 
 .image-outer-container {
-  @include setup_size(100%, 80%);
+  @include setup_size(100%, 100%);
   @include flex_center(row);
   position: relative;
 }
 
 .image-container {
-  @include setup_size(70%, 105%);
+  @include setup_size(100%, 105%);
   overflow: hidden;
   //   position: absolute;
   //   top: 0;
@@ -36,7 +36,7 @@
 }
 
 .image-shadow {
-  @include setup_size(70%, 105%);
+  @include setup_size(100%, 105%);
   background: $photoGradient;
   position: absolute;
   top: 0;

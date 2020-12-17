@@ -8,11 +8,22 @@
   max-width: 1200px;
   margin-top: 5vh;
   position: relative;
-  padding: 25px 15px 15px 15px;
+  padding: 20px 15px 15px 15px;
   overflow: visible;
   h4 {
     position: absolute;
-    transform: translateY(-47px);
+    top: 0;
+    transform: translateY(-20px);
     color: $lightBlue;
+  }
+}
+
+.badge-container-inner {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  & > * {
+    margin: 5px;
   }
 }

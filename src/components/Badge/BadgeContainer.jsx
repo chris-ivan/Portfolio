@@ -6,14 +6,16 @@ export const BadgeContainer = ({ title, badges }) => {
   return (
     <div className="badge-container">
       <h4>{title}</h4>
-      {badges.map((badge) => (
-        <Badge
-          component={badge.component}
-          alt={badge.alt}
-          label={badge.label}
-          key={badge.label}
-        />
-      ))}
+      <div className="badge-container-inner">
+        {badges.map((badge) => (
+          <Badge
+            component={badge.component}
+            alt={badge.alt}
+            label={badge.label}
+            key={badge.label}
+          />
+        ))}
+      </div>
     </div>
   );
 };

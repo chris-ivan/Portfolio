@@ -4,5 +4,28 @@
 .techStack-container {
   @include setup_size(100%, auto);
   @include flex_center(column);
-  margin-top: 10vh;
+  margin: 15vh 0;
+  position: relative;
+  h2 {
+    margin-bottom: 5vh;
+  }
+}
+
+.tech-stack-decoration {
+  position: absolute;
+  @include setup_size(100%, 100%);
+  overflow: hidden;
+}
+
+.decorations {
+  &-sphere {
+    @include setup_decor(30%, auto, auto, -10%, auto, auto);
+  }
+  &-video {
+    @include setup_decor(0, auto, auto, -10%, 30%, auto);
+    opacity: 0.1;
+  }
+  &-laptop {
+    @include setup_decor(auto, -10%, 0, auto, 35%, auto);
+  }
 }

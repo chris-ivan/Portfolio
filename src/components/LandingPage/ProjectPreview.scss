@@ -1,0 +1,57 @@
+@import "../../pages/Template/variables";
+@import "../../pages/Template/mixin";
+
+.project-preview {
+  @include setup_size(100%, 90vh);
+  @include flex_center(column);
+  position: relative;
+}
+
+.project-preview-inner {
+  @include setup_size(95vw, 85vh);
+  position: absolute;
+  border: 1px solid $darkGrey;
+}
+
+.project-preview-image {
+  @include setup_size(95vw, 85vh);
+  position: absolute;
+  overflow: hidden;
+  & > * {
+    filter: blur(15px);
+    opacity: 0.2;
+  }
+}
+
+.project-preview-title {
+  background: $lighterBlack;
+  padding: 15px 20px 15px 5vw;
+  position: absolute;
+  left: -2.5vw;
+  top: 5%;
+  z-index: 5;
+  box-shadow: $shadowDark;
+}
+
+.project-preview-content {
+  @include setup_size(50%, auto);
+  padding: 15px 20px 15px 5vw;
+  position: absolute;
+  top: 20%;
+}
+
+.project-preview-screenshoot {
+  @include setup_size(95vw, 85vh);
+  position: absolute;
+  pointer-events: none;
+  & > * {
+    position: absolute;
+  }
+  &-phone {
+    @include setup_decor(2%, 3%, auto, auto, 20%, auto);
+  }
+  &-tab {
+    z-index: 10;
+    @include setup_decor(auto, 7%, 2%, auto, auto, 60%);
+  }
+}

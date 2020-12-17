@@ -11,7 +11,7 @@ h2 {
 }
 h3 {
   // font-size: 48px;
-  font-size: clamp(28px, 3vw, 48px);
+  font-size: clamp(28px, 2.5vw, 48px);
 }
 h4 {
   // font-size: 34px;
@@ -21,7 +21,7 @@ h4 {
 h5 {
   // font-size: 24px;
   // font-size: clamp(20px, 3vw, 28px);
-  font-size: clamp(16px, 2.2vw, 18px);
+  font-size: clamp(14px, 2.1vw, 16px);
   font-weight: 300;
 }
 h6 {
@@ -30,11 +30,15 @@ h6 {
 }
 p {
   // font-size: 16px;
-  font-size: clamp(16px, 2.5vw, 22px);
+  font-size: clamp(16px, 2.2vw, 18px);
 }
 
 a {
   text-decoration: none;
+}
+
+.blue-text {
+  color: $blue;
 }
 
 .blue-span {

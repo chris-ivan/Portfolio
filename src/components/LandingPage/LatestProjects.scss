@@ -1,0 +1,7 @@
+@import "../../pages/Template/variables";
+@import "../../pages/Template/mixin";
+
+.latestProjects-container {
+  @include setup_size(100%, auto);
+  @include flex_center(column);
+}
