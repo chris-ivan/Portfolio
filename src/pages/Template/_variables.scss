@@ -1,0 +1,20 @@
+$navbar-height: 60px;
+$breakpoint-small: 480px;
+$breakpoint-medium: 1025px;
+$content-max-width: 1080px;
+
+$black: rgb(11, 16, 20);
+$lighterBlack: rgb(25, 26, 36);
+$white: rgb(244, 244, 244);
+$lightGrey: rgb(189, 189, 189);
+$darkGrey: rgb(79, 79, 79);
+$lightBlue: rgb(86, 204, 242);
+$blue: rgb(45, 156, 219);
+$darkBlue: rgb(15, 26, 45);
+
+// update mixin.scss kalo ubah di sini
+$photoGradient: linear-gradient(340.3deg, #1b1c22 8.97%, #0b1014 93.5%);
+$shadowDark: -6px 5px 8px rgba(11, 16, 20, 0.87);
+$shadowLight: -5px 5px 24px rgba(176, 176, 176, 0.25);
+$shadowBlue: 0px 4px 10px -5px rgba(86, 204, 242, 0.3);
+$shadowLargeSubtleWhite: -5px 5px 24px 16px rgba(66, 66, 66, 0.08);

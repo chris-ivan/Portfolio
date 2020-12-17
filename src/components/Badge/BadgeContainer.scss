@@ -1,0 +1,18 @@
+@import "../../pages/Template/variables";
+@import "../../pages/Template/mixin";
+
+.badge-container {
+  @include flex_center(column);
+  border: 1px solid $darkGrey;
+  width: 80vw;
+  max-width: 1200px;
+  margin-top: 5vh;
+  position: relative;
+  padding: 25px 15px 15px 15px;
+  overflow: visible;
+  h4 {
+    position: absolute;
+    transform: translateY(-47px);
+    color: $lightBlue;
+  }
+}

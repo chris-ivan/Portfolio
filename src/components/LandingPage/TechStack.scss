@@ -1,0 +1,8 @@
+@import "../../pages/Template/variables";
+@import "../../pages/Template/mixin";
+
+.techStack-container {
+  @include setup_size(100%, auto);
+  @include flex_center(column);
+  margin-top: 10vh;
+}

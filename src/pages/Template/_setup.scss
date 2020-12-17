@@ -1,0 +1,77 @@
+@import "./variables";
+@import "./mixin";
+
+h1 {
+  // font-size: 97px;
+  font-size: clamp(36px, 4.5vw, 72px);
+}
+h2 {
+  // font-size: 61px;
+  font-size: clamp(32px, 3.5vw, 54px);
+}
+h3 {
+  // font-size: 48px;
+  font-size: clamp(28px, 3vw, 48px);
+}
+h4 {
+  // font-size: 34px;
+  font-size: clamp(24px, 2.2vw, 36px);
+  font-weight: 300;
+}
+h5 {
+  // font-size: 24px;
+  // font-size: clamp(20px, 3vw, 28px);
+  font-size: clamp(16px, 2.2vw, 18px);
+  font-weight: 300;
+}
+h6 {
+  // font-size: 20px;
+  font-size: clamp(12px, 2vw, 16px);
+}
+p {
+  // font-size: 16px;
+  font-size: clamp(16px, 2.5vw, 22px);
+}
+
+a {
+  text-decoration: none;
+}
+
+.blue-span {
+  color: $blue;
+  text-shadow: $shadowDark;
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    @include setup_size(105%, 50%);
+    background: $lighterBlack;
+    transform: translate(-2.5%, 100%);
+  }
+}
+
+.decorations {
+  position: absolute;
+  &-front,
+  &-semi-front {
+    z-index: 3;
+    @include set_glow(0.1);
+  }
+  &-back {
+    z-index: -1;
+    opacity: 0.2;
+  }
+}
+
+.code-heading {
+  color: inherit;
+  &::before {
+    content: "< ";
+  }
+  &::after {
+    content: " />";
+  }
+}

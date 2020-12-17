@@ -1,0 +1,25 @@
+@mixin setup_size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin flex_center($flex) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $flex;
+}
+
+@mixin setup_decor($top, $right, $bottom, $left, $width, $height) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  width: $width;
+  height: $height;
+}
+
+@mixin set_glow($opacity) {
+  -webkit-filter: drop-shadow(-5px 5px 5px rgba(45, 156, 219, $opacity));
+  filter: drop-shadow(-5px 5px 5px rgba(45, 156, 219, $opacity));
+}

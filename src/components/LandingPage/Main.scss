@@ -1,0 +1,55 @@
+@import "../../pages/Template/variables";
+@import "../../pages/Template/mixin";
+
+.main-container {
+  @include flex_center(row);
+  @include setup_size(100%, 100%);
+  .landing-main-text {
+    transform: translateY(-5vh);
+    h4 {
+      margin-bottom: 3vh;
+    }
+  }
+  .landing-main-image-container {
+    @include flex_center(row);
+    transform: translateX(5vw);
+    height: 90vh;
+    width: 40vw;
+  }
+}
+
+.landing-page-main-decorations {
+  @include setup_size(100%, 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.decorations {
+  &-profile {
+    @include setup_decor(auto, -10%, 5%, auto, auto, 15%);
+  }
+  &-avatar {
+    @include setup_decor(auto, 37.5%, 20%, auto, 7.5%, auto);
+  }
+  &-love {
+    @include setup_decor(auto, 8%, 45%, auto, 5%, auto);
+    transform: rotate(5deg);
+  }
+  &-shard {
+    @include setup_decor(-5%, 5%, auto, auto, 20%, auto);
+  }
+  &-image {
+    @include setup_decor(35%, -2%, auto, auto, auto, 20%);
+  }
+  &-bubble {
+    @include setup_decor(10%, auto, auto, -2%, 10%, auto);
+  }
+}
+
+.scroll-down-icon {
+  position: absolute;
+  @include setup_decor(auto, auto, 5%, 50%, auto, 6%);
+}

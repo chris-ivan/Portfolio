@@ -1,0 +1,12 @@
+@import "../../pages/Template/variables";
+@import "../../pages/Template/mixin";
+
+.social-media-container {
+  position: fixed;
+  //   display: flex;
+  bottom: 2.5vh;
+  left: 2vw;
+  .social-media-icon-container {
+    margin-top: 10px;
+  }
+}
