@@ -1,0 +1,35 @@
+@import "../../pages/Template/variables";
+@import "../../pages/Template/mixin";
+
+.input-container {
+  margin: 7px 0;
+  @include setup_size(100%, auto);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  h6 {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    color: $lightBlue;
+  }
+  input,
+  textarea {
+    @include setup_size(100%, auto);
+    background: transparent;
+    border: 1px solid $darkGrey;
+    padding: 16px 10px 10px;
+    font-family: inherit;
+    font-size: $p-size;
+  }
+  .error-message {
+    margin-top: 4px;
+    color: $red;
+    font-size: smaller;
+  }
+
+  textarea {
+    resize: vertical;
+    height: 150px;
+  }
+}

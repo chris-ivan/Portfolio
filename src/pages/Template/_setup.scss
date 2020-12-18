@@ -27,10 +27,12 @@ h5 {
 h6 {
   // font-size: 20px;
   font-size: clamp(12px, 2vw, 16px);
+  font-weight: 500;
 }
+
 p {
   // font-size: 16px;
-  font-size: clamp(16px, 2.2vw, 18px);
+  font-size: $p-size;
 }
 
 a {
@@ -38,7 +40,7 @@ a {
 }
 
 .blue-text {
-  color: $blue;
+  color: $lightBlue;
 }
 
 .blue-span {
@@ -77,5 +79,16 @@ a {
   }
   &::after {
     content: " />";
+  }
+}
+
+.Toastify {
+  &__toast--dark {
+    background: $lighterBlack;
+    box-shadow: $shadowDark;
+    font-family: inherit;
+  }
+  &__progress-bar--dark {
+    background: $blue;
   }
 }

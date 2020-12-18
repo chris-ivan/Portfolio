@@ -1,6 +1,101 @@
-import React from "react";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
+import "./ContactPage.scss";
+import { Button } from "../components/Button/Button";
+import { Input } from "../components/ContactPage/Input";
+import { H2 } from "../components/Heading/Heading";
 import { Template } from "./Template/Template";
 
+const text = (
+  <p>
+    Thanks for taking the time to reach out. If you wanna get in touch, talk to
+    me about a project collaboration or just say hi, fill up the awesome form
+    below or send an email to{" "}
+    <a href="mailto:gunardi@gmail.com">
+      <span className="blue-text">gunardi.ivan@gmail.com</span>
+    </a>{" "}
+    and let's talk!
+  </p>
+);
+
 export const ContactPage = () => {
-  return <Template>This is a contact page</Template>;
+  const [name, setName] = useState({ value: "", isValid: false });
+  const [email, setEmail] = useState({ value: "", isValid: false });
+  const [content, setContent] = useState({ value: "", isValid: false });
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    const isContentValid = name.isValid && email.isValid && content.isValid;
+    const data = {
+      name: name.value,
+      email: email.value,
+      content: content.value,
+    };
+    if (!isContentValid) {
+      toast.dark("Oops! Please complete the form!");
+    } else {
+      toast.dark("Thank you! I will reply to you soon!");
+      console.log(data);
+      setName({ value: "", isValid: false });
+      setEmail({ value: "", isValid: false });
+      setContent({ value: "", isValid: false });
+    }
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  };
+
+  return (
+    <Template>
+      <div className="contact">
+        <div className="contact-container">
+          <H2>Let'sConnect</H2>
+          {text}
+          <form className="contact-form">
+            <div className="upper-form">
+              <Input
+                value={name}
+                label="Name"
+                placeholder="Hello there!"
+                onChange={setName}
+                validators={{
+                  max: 100,
+                  required: true,
+                }}
+              />
+              <Input
+                value={email}
+                label="Email"
+                placeholder="have@nice.day"
+                onChange={setEmail}
+                validators={{
+                  max: 100,
+                  required: true,
+                  isEmail: true,
+                }}
+              />
+            </div>
+            <Input
+              value={content}
+              label="Message"
+              placeholder="What's going on?"
+              onChange={setContent}
+              validators={{
+                required: true,
+              }}
+              textarea
+            />
+            <Button
+              label="Send"
+              loading={loading}
+              onClick={handleSubmit}
+              primary
+            />
+          </form>
+        </div>
+      </div>
+    </Template>
+  );
 };

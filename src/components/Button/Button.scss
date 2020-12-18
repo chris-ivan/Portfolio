@@ -5,18 +5,22 @@
   padding: 0;
   width: fit-content;
   button {
-    @include flex_center(row);
     cursor: pointer;
     font-family: inherit;
     background-color: transparent;
+    position: relative;
     margin: 0;
-    h4 {
-      font-weight: 600;
-      color: inherit;
-    }
-    p {
-      margin: 0 2px;
-      color: inherit;
+    .button-content {
+      @include flex_center(row);
+      h4 {
+        font-weight: 600;
+        color: inherit;
+        font-size: 150%;
+      }
+      p {
+        margin: 0 2px;
+        color: inherit;
+      }
     }
   }
   &-large {
@@ -24,12 +28,16 @@
       padding: 10px 30px;
       border: 2px solid $blue;
       background: $blue;
-      color: $black;
+      .button-content {
+        color: $black;
+      }
     }
     &-secondary button {
       padding: 10px 30px;
       border: 2px solid $blue;
-      color: $blue;
+      .button-content {
+        color: $blue;
+      }
     }
   }
   &-small {
@@ -43,12 +51,16 @@
       svg {
         transform: scale(0.8);
       }
-      color: $lightBlue;
+      .button-content {
+        color: $lightBlue;
+      }
     }
     &-secondary button {
       border: 1.5px solid $lightGrey;
       padding: 5px 10px;
-      color: $lightGrey;
+      .button-content {
+        color: $lightGrey;
+      }
     }
   }
 }
@@ -64,5 +76,26 @@
   svg,
   path {
     fill: $lightGrey;
+  }
+}
+
+.loading-animation {
+  transition: all 0.25s ease-in-out;
+  position: absolute;
+  top: 27%;
+  left: 42%;
+  opacity: 0;
+}
+
+.button-content {
+  transition: all 0.25s ease-in-out;
+}
+
+.button-loading {
+  .loading-animation {
+    opacity: 1;
+  }
+  .button-content {
+    opacity: 0;
   }
 }

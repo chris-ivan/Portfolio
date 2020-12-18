@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Button.scss";
 
+import { ReactComponent as Loading } from "../../images/decorations/loading.svg";
+
 export const Button = ({
   label,
   onClick,
@@ -10,10 +12,11 @@ export const Button = ({
   iconPosition,
   primary,
   small,
+  loading,
 }) => {
   // iconPosition = "left" or "right"
   const content = (
-    <>
+    <div className="button-content">
       {iconPosition === "left" && (
         <div className="button-icon">
           <Icon alt="button-icon" />
@@ -25,20 +28,27 @@ export const Button = ({
           <Icon alt="button-icon" />
         </div>
       )}
-    </>
+    </div>
   );
   return (
     <div
-      className={`button-container button-container${
-        small ? "-small" : "-large"
-      }${primary ? "-primary" : "-secondary"}`}
+      className={`button-container ${
+        loading && "button-loading"
+      } button-container${small ? "-small" : "-large"}${
+        primary ? "-primary" : "-secondary"
+      }`}
     >
       {link && (
         <Link to={link}>
           <button>{content}</button>
         </Link>
       )}
-      {onClick && <button onClick={onClick}>{content}</button>}
+      {onClick && (
+        <button onClick={onClick}>
+          <Loading className="loading-animation" />
+          {content}
+        </button>
+      )}
     </div>
   );
 };

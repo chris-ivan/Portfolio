@@ -1,0 +1,27 @@
+@import "./Template/variables";
+@import "./Template/mixin";
+
+.contact {
+  @include setup_size(100%, 100%);
+  @include flex_center(column);
+  &-container {
+    margin-top: 5vh;
+    @include setup_size(80%, auto);
+    max-width: $content-max-width;
+  }
+}
+
+.contact-form {
+  margin: 2vh 0;
+  & > * {
+    margin: 2vh 0;
+  }
+  .upper-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    & > * {
+      @include setup_size(100%, auto);
+    }
+  }
+}
