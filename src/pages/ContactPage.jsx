@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { toast } from "react-toastify";
 import "./ContactPage.scss";
 import { Button } from "../components/Button/Button";
 import { Input } from "../components/ContactPage/Input";
 import { H2 } from "../components/Heading/Heading";
 import { Template } from "./Template/Template";
+
+const emailUrl = "http://localhost:5000/mail/sendEmail";
 
 const text = (
   <p>
@@ -24,7 +27,15 @@ export const ContactPage = () => {
   const [content, setContent] = useState({ value: "", isValid: false });
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const sendEmail = async (data) => {
+    try {
+      axios.post(emailUrl, data);
+    } catch (err) {
+      toast.dark(`Sorry! An error occurred, please try again :"`);
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     const isContentValid = name.isValid && email.isValid && content.isValid;
@@ -36,15 +47,14 @@ export const ContactPage = () => {
     if (!isContentValid) {
       toast.dark("Oops! Please complete the form!");
     } else {
+      await sendEmail(data);
       toast.dark("Thank you! I will reply to you soon!");
       console.log(data);
       setName({ value: "", isValid: false });
       setEmail({ value: "", isValid: false });
       setContent({ value: "", isValid: false });
     }
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
+    setLoading(false);
   };
 
   return (
