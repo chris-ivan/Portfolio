@@ -1,0 +1,68 @@
+@import "../../pages/Template/variables";
+@import "../../pages/Template/mixin";
+
+.button-container {
+  padding: 0;
+  width: fit-content;
+  button {
+    @include flex_center(row);
+    cursor: pointer;
+    font-family: inherit;
+    background-color: transparent;
+    margin: 0;
+    h4 {
+      font-weight: 600;
+      color: inherit;
+    }
+    p {
+      margin: 0 2px;
+      color: inherit;
+    }
+  }
+  &-large {
+    &-primary button {
+      padding: 10px 30px;
+      border: 2px solid $blue;
+      background: $blue;
+      color: $black;
+    }
+    &-secondary button {
+      padding: 10px 30px;
+      border: 2px solid $blue;
+      color: $blue;
+    }
+  }
+  &-small {
+    &-primary button {
+      padding: 5px 10px;
+      border: 1.5px solid $lightBlue;
+      svg,
+      path {
+        fill: $lightBlue;
+      }
+      svg {
+        transform: scale(0.8);
+      }
+      color: $lightBlue;
+    }
+    &-secondary button {
+      border: 1.5px solid $lightGrey;
+      padding: 5px 10px;
+      color: $lightGrey;
+    }
+  }
+}
+
+.button-icon {
+  @include flex_center(row);
+  @include setup_size(28px, 24px);
+  //   margin: 0 2px;
+  svg {
+    @include setup_size(30px, 30px);
+    transform: scale(0.6);
+  }
+  svg,
+  path {
+    fill: $lightGrey;
+  }
+}

@@ -38,6 +38,15 @@
   padding: 15px 20px 15px 5vw;
   position: absolute;
   top: 20%;
+  .project-preview-buttons {
+    @include setup_size(100%, auto);
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4vh;
+    & > * {
+      margin-right: 5px;
+    }
+  }
 }
 
 .project-preview-screenshoot {

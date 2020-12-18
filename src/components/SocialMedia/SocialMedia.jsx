@@ -1,27 +1,32 @@
 import React from "react";
 import "./SocialMedia.scss";
 
-import LinkedIn from "../../images/icons/LinkedIn.svg";
-import Github from "../../images/icons/Github.svg";
-import Instagram from "../../images/icons/Instagram.svg";
-import Line from "../../images/icons/Line.svg";
+// import LinkedIn from "../../images/icons/LinkedIn.svg";
+// import Github from "../../images/icons/Github.svg";
+// import Instagram from "../../images/icons/Instagram.svg";
+// import Line from "../../images/icons/Line.svg";
+
+import { ReactComponent as LinkedIn } from "../../images/icons/LinkedIn.svg";
+import { ReactComponent as Github } from "../../images/icons/Github.svg";
+import { ReactComponent as Instagram } from "../../images/icons/Instagram.svg";
+import { ReactComponent as Line } from "../../images/icons/Line.svg";
 
 const socialMediaData = [
   {
     alt: "Linkedin-logo",
-    icon: LinkedIn,
+    Icon: LinkedIn,
   },
   {
     alt: "Github-logo",
-    icon: Github,
+    Icon: Github,
   },
   {
     alt: "Instagram-logo",
-    icon: Instagram,
+    Icon: Instagram,
   },
   {
     alt: "Line-logo",
-    icon: Line,
+    Icon: Line,
   },
 ];
 export const SocialMedia = () => {
@@ -29,7 +34,8 @@ export const SocialMedia = () => {
     <div className="social-media-container">
       {socialMediaData.map((socmed) => (
         <div key={socmed.alt} className="social-media-icon-container">
-          <img src={socmed.icon} alt={socmed.alt} />
+          {/* <img src={socmed.icon} alt={socmed.alt} /> */}
+          <socmed.Icon alt={socmed.alt} />
         </div>
       ))}
     </div>

@@ -46,6 +46,10 @@ export const LatestProjects = () => {
         desc={mzDesc}
         tab={MZTab}
         phone={MZPhone}
+        webUrl="milezeroproject.com"
+        githubUrl="https://github.com/ravielze/MZ-FE"
+        figmaUrl="https://www.figma.com/proto/oAU5qeWx8q5ChgTp3G6rlE/Milezero?scaling=scale-down-width&node-id=1341%3A4641"
+        arrowUrl="/"
       />
       <ProjectPreview
         src={AMI}
@@ -54,6 +58,10 @@ export const LatestProjects = () => {
         desc={amiDesc}
         tab={AMITab}
         phone={AMIPhone}
+        webUrl="http://akumasukitb.com/"
+        githubUrl="https://github.com/Chris-Ivan/Web-AMI21"
+        figmaUrl="https://www.figma.com/proto/HxkxUi9enVAU3ZpKAq7WgD/AMI-2021?scaling=scale-down&node-id=23%3A6"
+        arrowUrl="/"
       />
     </div>
   );

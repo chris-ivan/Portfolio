@@ -3,11 +3,20 @@
 
 .social-media-container {
   position: fixed;
-  //   display: flex;
-  bottom: 2.5vh;
+  display: flex;
+  bottom: 0;
   left: 2vw;
   z-index: 99;
   .social-media-icon-container {
-    margin-top: 10px;
+    padding: 7px 2px;
+    @include setup_size(44px, 54px);
+    @include flex_center(column);
+    position: relative;
+    svg {
+      position: absolute;
+      @include flex_center(column);
+      transform: scale(0.8);
+      @include setup_size(30px, 30px);
+    }
   }
 }

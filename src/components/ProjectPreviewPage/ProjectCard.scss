@@ -1,0 +1,39 @@
+@import "../../pages/Template/variables";
+@import "../../pages/Template/mixin";
+
+.projectCard {
+  @include setup_size(25vw, 100%);
+  border: 1px solid $darkGrey;
+  box-shadow: $shadowDark;
+  background: $lighterBlack;
+  &-image {
+    @include setup_size(100%, 85%);
+    overflow: hidden;
+    position: relative;
+    &::after {
+      position: absolute;
+      @include setup_size(100%, 100%);
+      content: "";
+      background: $black;
+      opacity: 0.5;
+      top: 0;
+    }
+  }
+  &-info {
+    padding: 15px;
+    p {
+      color: $lightBlue;
+    }
+    &-tags {
+      display: flex;
+
+      & > * {
+        color: $lightGrey;
+        &:not(:last-child):after {
+          content: " | ";
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+}

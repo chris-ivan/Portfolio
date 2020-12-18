@@ -4,6 +4,9 @@
 .footer {
   background-color: $lighterBlack;
   margin-top: 5vh;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
+  p {
+    font-size: small;
+  }
 }
