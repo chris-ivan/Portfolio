@@ -6,6 +6,7 @@
   border: 1px solid $darkGrey;
   box-shadow: $shadowDark;
   background: $lighterBlack;
+  margin: 0 5px;
   &-image {
     @include setup_size(100%, 85%);
     overflow: hidden;
