@@ -1,0 +1,20 @@
+@import "../../pages/Template/variables";
+@import "../../pages/Template/mixin";
+
+.more-about-container {
+  margin-top: 12vh;
+  @include setup_size(100%, auto);
+  @include flex_center(column);
+  //   overflow-y: hidden;
+  position: relative;
+}
+
+.decorations-more {
+  &-grid {
+    @include setup_decor(-40%, 0, auto, auto, auto, 100%);
+    opacity: 0.025;
+  }
+  &-image {
+    @include setup_decor(auto, auto, 0, -10%, auto, auto);
+  }
+}

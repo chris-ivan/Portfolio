@@ -1,5 +1,5 @@
 import React from "react";
-import HorizontalScroll from "react-scroll-horizontal";
+import HorizontalScroll from "../shared/ScrollHorizontal";
 import "./ProjectPreviewPage.scss";
 import { ProjectCard } from "../components/ProjectPreviewPage/ProjectCard";
 import { Template } from "./Template/Template";
@@ -18,6 +18,10 @@ import IMThumb from "../images/jpg/insanemath-thumbnail.jpg";
 import TinyIMThumb from "../images/jpg/insanemath-thumbnail-min.jpg";
 import MineFestThumb from "../images/jpg/minefest-thumbnail.jpg";
 import TinyMineFestThumb from "../images/jpg/minefest-thumbnail-min.jpg";
+
+import GridDecor from "../images/decorations/grid.svg";
+import VideoDecor from "../images/decorations/video.svg";
+import LaptopDecor from "../images/png/laptop.png";
 
 const projectThumbnails = [
   {
@@ -68,12 +72,31 @@ export const ProjectPreviewPage = () => {
   return (
     <Template>
       <div className="projectpreviewpage-container">
+        <div className="projectpreviewpage-decorations">
+          <img
+            src={GridDecor}
+            alt="decor"
+            className="decorations decorations-back decorations-project-grid"
+          />
+          <img
+            src={VideoDecor}
+            alt="decor"
+            className="decorations decorations-back decorations-project-video"
+          />
+          <img
+            src={LaptopDecor}
+            alt="decor"
+            className="decorations decorations-back decorations-project-laptop"
+          />
+        </div>
         <HorizontalScroll
           reverseScroll={true}
           config={{ stiffness: 60, damping: 10 }}
+          style={{ height: "calc(100vh - 140px)" }}
         >
           {projectThumbnails.map((project) => (
             <ProjectCard
+              className="horizontal-scroll"
               src={project.src}
               tinySrc={project.tinySrc}
               key={project.title}

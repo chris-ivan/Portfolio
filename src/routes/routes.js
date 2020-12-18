@@ -30,6 +30,7 @@ const ContactPage = lazy(() =>
   }))
 );
 
+// update di button kalo dipake
 export const routes = [
   {
     label: "Home",

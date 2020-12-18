@@ -6,7 +6,12 @@ export const ProjectCard = ({ src, tinySrc, title, tags }) => {
   return (
     <div className="projectCard">
       <div className="projectCard-image">
-        <Image src={src} tinySrc={tinySrc} alt="project-thumbnail" />
+        <Image
+          src={src}
+          tinySrc={tinySrc}
+          alt="project-thumbnail"
+          progressive
+        />
       </div>
       <div className="projectCard-info">
         <p>{title}</p>

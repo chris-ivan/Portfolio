@@ -28,6 +28,7 @@ export const ProjectPreview = ({
           tinySrc={tinySrc}
           className="project-preview-image-bg"
           alt="project-preview"
+          progressive
         />
       </div>
       <div className="project-preview-inner">

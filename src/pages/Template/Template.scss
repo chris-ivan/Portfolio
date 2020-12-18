@@ -1,5 +1,7 @@
 @import "./variables";
+@import "./mixin";
 
 .content-container {
+  @include setup_size(100%, 100%);
   margin-top: $navbar-height;
 }

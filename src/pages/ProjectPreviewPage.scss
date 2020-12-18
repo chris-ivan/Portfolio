@@ -2,15 +2,32 @@
 @import "./Template/mixin";
 
 .projectpreviewpage-container {
-  @include setup_size(100%, 80vh);
+  @include setup_size(100%, 100%);
   padding: 0 1.5vw;
-  margin-top: 72px;
+  margin: 72px 0;
   display: flex;
-  //   overflow-x: scroll;
-  //   overflow: auto;
+  position: relative;
+  overflow-x: hidden;
   &::-webkit-scrollbar {
     display: none;
   }
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.projectpreviewpage-decorations {
+  @include setup_size(100%, 120%);
+  pointer-events: none;
+  position: absolute;
+  .decorations-project {
+    &-grid {
+      @include setup_decor(-20%, 0, auto, auto, auto, 70%);
+    }
+    &-video {
+      @include setup_decor(auto, auto, 10%, -10%, auto, 30%);
+    }
+    &-laptop {
+      @include setup_decor(auto, 0, 0, auto, auto, 60%);
+    }
+  }
 }

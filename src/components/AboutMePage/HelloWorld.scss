@@ -1,0 +1,19 @@
+@import "../../pages/Template/variables";
+@import "../../pages/Template/mixin";
+
+.hello-world {
+  @include setup_size(100%, 50vh);
+  @include flex_center(row);
+  margin: 20vh 0 12vh;
+  &-desc {
+    @include setup_size(40%, 100%);
+  }
+  &-image {
+    @include setup_size(25%, 100%);
+    margin-left: 5vw;
+  }
+}
+
+.decorations-hello-shard {
+  @include setup_decor(5%, 0, auto, auto, 30%, auto);
+}

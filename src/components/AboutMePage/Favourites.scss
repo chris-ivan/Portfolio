@@ -1,0 +1,28 @@
+@import "../../pages/Template/variables";
+@import "../../pages/Template/mixin";
+
+.favourites-container {
+  position: relative;
+  @include setup_size(100%, auto);
+  @include flex_center(column);
+  margin: 12vh 0;
+}
+
+.right-table {
+  display: flex;
+  margin: 7px 0 7px 2vw;
+  max-width: 40vw;
+  flex-wrap: wrap;
+  p {
+    color: $lightGrey;
+    &:not(:last-child):after {
+      content: " | ";
+      margin-right: 4px;
+    }
+  }
+}
+
+.decorations-trivia-laptop {
+  @include setup_decor(auto, auto, -30%, -15%, auto, 100%);
+  transform: scaleX(-1);
+}
