@@ -1,0 +1,20 @@
+@import "./Template/variables";
+@import "./Template/mixin";
+
+.projectPage {
+  @include setup_size(100%, 100%);
+  margin-top: 15vh;
+  &-content {
+    @include flex_center(column);
+    @include setup_size(60%, 100%);
+    margin: 0 auto;
+    max-width: $content-max-width;
+  }
+  &-title {
+    margin: 6vh 0 2.5vh;
+    color: $lightBlue;
+  }
+  p {
+    line-height: 1.5;
+  }
+}
