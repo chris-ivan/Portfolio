@@ -1,0 +1,81 @@
+@import "../../pages/Template/variables";
+@import "../../pages/Template/mixin";
+
+.bottom-navigation {
+  @include setup_size(100%, auto);
+  @include flex_center(row);
+  position: relative;
+  margin: 10vh 0 5vh;
+  & > * {
+    margin: 0 1vw;
+  }
+  &-side {
+    @include setup_size(100%, auto);
+    position: absolute;
+  }
+  &-center {
+    transform: translateY(2px);
+    @include flex_center(row);
+    z-index: 20;
+    & > * {
+      margin: 0 2px;
+    }
+  }
+  &-left {
+    float: left;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    &-top {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  &-right {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    &-top {
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+
+  &-left-top,
+  &-right-top {
+    p {
+      color: $lightBlue;
+      font-weight: bold;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-medium) {
+  .bottom-navigation {
+    margin: 2vh 0 8vh;
+    @include flex_center(column);
+    &-center {
+      transform: translateY(0);
+      margin-bottom: 1vh;
+    }
+    &-side {
+      @include setup_size(100%, 5vh);
+      position: relative;
+      & > * {
+        margin: 2vh 2vw 0;
+      }
+    }
+    &-left {
+      &-top {
+        justify-content: flex-start;
+      }
+    }
+    &-right {
+      &-top {
+        justify-content: flex-end;
+      }
+    }
+  }
+}

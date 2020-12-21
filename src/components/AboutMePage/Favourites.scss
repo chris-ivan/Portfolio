@@ -26,3 +26,12 @@
   @include setup_decor(auto, auto, -30%, -15%, auto, 100%);
   transform: scaleX(-1);
 }
+
+@media screen and (max-width: $breakpoint-small) {
+  .favourites-container {
+    margin: 10vh 0 5vh;
+  }
+  .decorations-trivia-laptop {
+    @include setup_decor(auto, auto, 0, -15%, 90%, auto);
+  }
+}

@@ -7,6 +7,7 @@
   box-shadow: $shadowDark;
   background: $lighterBlack;
   margin: 0 5px;
+  position: relative;
   &-image {
     @include setup_size(100%, 85%);
     overflow: hidden;
@@ -24,15 +25,73 @@
     padding: 15px;
     p {
       color: $lightBlue;
+      font-weight: 600;
     }
     &-tags {
       display: flex;
 
       & > * {
-        color: $lightGrey;
+        color: $white;
         &:not(:last-child):after {
           content: " | ";
           margin-right: 4px;
+        }
+      }
+    }
+  }
+}
+
+.ongoing-container {
+  position: absolute;
+  @include setup_size(auto, auto);
+  top: 5%;
+  right: -2%;
+  z-index: 20;
+}
+
+.coming-soon-container {
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  @include setup_size(100%, 100%);
+  @include flex_center(column);
+  font-size: x-large;
+  color: $lightBlue;
+  z-index: 20;
+  &::before {
+    content: "";
+    @include setup_size(80%, 5%);
+    background: $darkBlue;
+    transform: translateY(5vh);
+    z-index: -10;
+  }
+}
+
+@media screen and (max-width: $breakpoint-medium) {
+  .projectCard {
+    top: 3vh;
+    @include setup_size(60vw, 80vh);
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .projectCard {
+    top: 5vh;
+    @include setup_size(60vw, 70vh);
+    &-info {
+      padding: 10px;
+      p {
+        font-size: medium;
+        margin-bottom: 2px;
+      }
+      &-tags {
+        display: flex;
+        flex-wrap: wrap;
+        & > * {
+          font-size: 12px;
+          &:not(:last-child):after {
+            content: " | ";
+            margin-right: 4px;
+          }
         }
       }
     }

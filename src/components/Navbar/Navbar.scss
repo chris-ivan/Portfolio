@@ -34,4 +34,30 @@
   & > * {
     margin-right: 3vw;
   }
+  &-link {
+    h5 {
+      transition: $defaultTransition;
+      color: $lightGrey;
+    }
+    &:hover h5 {
+      color: $white;
+    }
+    &-active h5 {
+      color: $blue;
+      font-weight: 500;
+    }
+    &-active:hover h5 {
+      color: $blue;
+      cursor: default;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .navbar {
+    @include flex_center(row);
+    & > * {
+      margin: 0 2vw;
+    }
+  }
 }

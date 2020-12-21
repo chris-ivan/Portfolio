@@ -13,8 +13,8 @@ export const Navbar = () => {
               <NavLink
                 exact={route.path === "/"}
                 disabled
-                // className="navbar-link"
-                // activeClassName="navbar-link-active"
+                className="navbar-link"
+                activeClassName="navbar-link-active"
                 key={route.path}
                 to={route.path}
               >

@@ -1,0 +1,92 @@
+@import "./Template/variables";
+@import "./Template/mixin";
+
+.projectPage {
+  @include setup_size(100%, 100%);
+  margin-top: 15vh;
+  &-content {
+    @include flex_center(column);
+    @include setup_size(60%, 100%);
+    margin: 0 auto;
+    max-width: $content-max-width;
+  }
+  &-title {
+    margin: 6vh 0 2.5vh;
+    color: $lightBlue;
+  }
+  p {
+    line-height: 1.5;
+  }
+}
+
+.projectPage-decorations {
+  @include setup_size(100%, 180%);
+  pointer-events: none;
+  position: absolute;
+  overflow: hidden;
+  .decorations-project {
+    &-grid {
+      @include setup_decor(-20%, 0, auto, auto, auto, 50%);
+      opacity: 0.05;
+    }
+    &-video {
+      @include setup_decor(60vh, auto, auto, -10%, auto, 20%);
+      opacity: 0.1;
+    }
+    &-laptop {
+      @include setup_decor(auto, 0, 0, auto, auto, 40%);
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-medium) {
+  .projectPage {
+    @include setup_size(100%, 100%);
+    margin-top: 10vh;
+    h2 {
+      margin-bottom: 3vh;
+    }
+    &-content {
+      @include setup_size(80%, 100%);
+    }
+    &-title {
+      margin: 2vh 0 2.5vh;
+    }
+    .Br {
+      display: none;
+    }
+  }
+
+  .projectPage-decorations {
+    @include setup_size(100%, 100%);
+    position: absolute;
+    top: 0;
+    .decorations-project {
+      &-grid {
+        @include setup_decor(-20%, 0, auto, auto, 80%, auto);
+      }
+      &-video {
+        @include setup_decor(50%, auto, auto, -10%, 50%, auto);
+      }
+      &-laptop {
+        @include setup_decor(auto, 0, 0, auto, 60%, auto);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .projectPage {
+    @include setup_size(100%, 100%);
+    margin: 12vh auto 5vh;
+    h2 {
+      margin-bottom: 3vh;
+      text-align: center;
+      font-size: larger;
+    }
+    &-title {
+      margin: 2vh 0 2.5vh;
+      font-size: large;
+    }
+  }
+}

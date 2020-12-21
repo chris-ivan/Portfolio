@@ -20,3 +20,17 @@
     }
   }
 }
+
+@media screen and (max-width: $breakpoint-small) {
+  .social-media-container {
+    margin: 0 0 2vw 2vh;
+    .social-media-icon-container {
+      padding: 2px;
+      @include setup_size(30px, 40px);
+      svg {
+        transform: scale(0.6);
+        @include setup_size(30px, 30px);
+      }
+    }
+  }
+}

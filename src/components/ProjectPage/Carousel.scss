@@ -1,0 +1,82 @@
+@import "../../pages/Template/variables";
+@import "../../pages/Template/mixin";
+
+.carousel {
+  @include setup_size(100%, fit-content);
+  @include flex_center(column);
+  margin: 0 auto;
+  max-width: $content-max-width;
+
+  &-initialized {
+    @include setup_size(100%, 100%);
+    overflow: visible !important;
+  }
+  &-track {
+    overflow: hidden;
+  }
+  &-content {
+    @include setup_size(100%, 100%);
+  }
+  &-item {
+    @include setup_size(100%, fit-content);
+    max-height: 60vh;
+  }
+}
+
+.carousel-image {
+  @include setup_size(100%, 100%);
+  background-size: cover;
+  background-position: center center;
+  object-fit: cover;
+}
+
+.carousel-prev,
+.carousel-next {
+  &::before {
+    transition: $defaultTransition;
+  }
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.carousel-prev {
+  transform: translateX(-100%);
+  &::before {
+    width: 40px !important;
+    height: 40px !important;
+    background-image: url("../../images/icons/carousel-left.svg") !important;
+    opacity: 0.5;
+  }
+}
+
+.carousel-next {
+  transform: translateX(100%);
+  &::before {
+    width: 40px !important;
+    height: 40px !important;
+    background-image: url("../../images/icons/carousel-right.svg") !important;
+    opacity: 0.5;
+  }
+}
+
+.carousel-dots {
+  li button::before {
+    color: $lightGrey !important;
+    transition: $defaultTransition;
+    transform: scale(0.7);
+  }
+  &:hover li button::before {
+    color: $blue !important;
+  }
+  &-active button::before {
+    color: $lightBlue !important;
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .carousel-dots {
+    margin: 0 !important;
+  }
+}
