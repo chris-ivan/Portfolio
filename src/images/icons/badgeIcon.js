@@ -32,6 +32,7 @@ export const badgeIcon = {
   SOCIAL_WEB: Web,
   SOCIAL_GITHUB: Github,
   SOCIAL_IG: Instagram,
+  SOCIAL_MEDIUM: Medium,
 
   TECH_PS: Photoshop,
   TECH_REACT: React,
@@ -57,7 +58,6 @@ export const badgeIcon = {
   TECH_BOOTSTRAP: Bootstrap,
   TECH_PHP: PHP,
   TECH_JS: JS,
-  TECH_MEDIUM: Medium,
   TECH_HTML: HTML,
-  TECH: CSS,
+  TECH_CSS: CSS,
 };

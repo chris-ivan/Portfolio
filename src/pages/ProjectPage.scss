@@ -18,3 +18,23 @@
     line-height: 1.5;
   }
 }
+
+.projectPage-decorations {
+  @include setup_size(100%, 180%);
+  pointer-events: none;
+  position: absolute;
+  overflow: hidden;
+  .decorations-project {
+    &-grid {
+      @include setup_decor(-20%, 0, auto, auto, auto, 50%);
+      opacity: 0.05;
+    }
+    &-video {
+      @include setup_decor(60vh, auto, auto, -10%, auto, 20%);
+      opacity: 0.1;
+    }
+    &-laptop {
+      @include setup_decor(auto, 0, 0, auto, auto, 40%);
+    }
+  }
+}

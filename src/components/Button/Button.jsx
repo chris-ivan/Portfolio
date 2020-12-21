@@ -8,6 +8,7 @@ export const Button = ({
   label,
   onClick,
   link,
+  outLink,
   icon: Icon,
   iconPosition,
   primary,
@@ -42,6 +43,11 @@ export const Button = ({
         <Link to={link}>
           <button>{content}</button>
         </Link>
+      )}
+      {outLink && (
+        <a href={outLink} target="_blank" rel="noopener noreferrer">
+          <button>{content}</button>
+        </a>
       )}
       {onClick && (
         <button onClick={onClick}>
