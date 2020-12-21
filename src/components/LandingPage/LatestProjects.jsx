@@ -12,6 +12,7 @@ import AMI from "../../images/jpg/ami-background.jpg";
 import TinyAMI from "../../images/jpg/ami-background-min.jpg";
 import AMITab from "../../images/png/ipad-ami.png";
 import AMIPhone from "../../images/png/android-ami.png";
+import { Init } from "../Animations/Init";
 
 const mzDesc = (
   <p>
@@ -38,31 +39,37 @@ const amiDesc = (
 export const LatestProjects = () => {
   return (
     <div className="latestProjects-container">
-      <H2>LatestProjects</H2>
-      <ProjectPreview
-        src={MZ}
-        tinySrc={TinyMZ}
-        title="Mile Zero Project"
-        desc={mzDesc}
-        tab={MZTab}
-        phone={MZPhone}
-        webUrl="milezeroproject.com"
-        githubUrl="https://github.com/ravielze/MZ-FE"
-        figmaUrl="https://www.figma.com/proto/oAU5qeWx8q5ChgTp3G6rlE/Milezero?scaling=scale-down-width&node-id=1341%3A4641"
-        arrowUrl="/"
-      />
-      <ProjectPreview
-        src={AMI}
-        tinySrc={TinyAMI}
-        title="Aku Masuk ITB 2021"
-        desc={amiDesc}
-        tab={AMITab}
-        phone={AMIPhone}
-        webUrl="http://akumasukitb.com/"
-        githubUrl="https://github.com/Chris-Ivan/Web-AMI21"
-        figmaUrl="https://www.figma.com/proto/HxkxUi9enVAU3ZpKAq7WgD/AMI-2021?scaling=scale-down&node-id=23%3A6"
-        arrowUrl="/"
-      />
+      <Init>
+        <H2>LatestProjects</H2>
+      </Init>
+      <Init>
+        <ProjectPreview
+          src={MZ}
+          tinySrc={TinyMZ}
+          title="Mile Zero Project"
+          desc={mzDesc}
+          tab={MZTab}
+          phone={MZPhone}
+          webUrl="milezeroproject.com"
+          githubUrl="https://github.com/ravielze/MZ-FE"
+          figmaUrl="https://www.figma.com/proto/oAU5qeWx8q5ChgTp3G6rlE/Milezero?scaling=scale-down-width&node-id=1341%3A4641"
+          arrowUrl="/"
+        />
+      </Init>
+      <Init>
+        <ProjectPreview
+          src={AMI}
+          tinySrc={TinyAMI}
+          title="Aku Masuk ITB 2021"
+          desc={amiDesc}
+          tab={AMITab}
+          phone={AMIPhone}
+          webUrl="http://akumasukitb.com/"
+          githubUrl="https://github.com/Chris-Ivan/Web-AMI21"
+          figmaUrl="https://www.figma.com/proto/HxkxUi9enVAU3ZpKAq7WgD/AMI-2021?scaling=scale-down&node-id=23%3A6"
+          arrowUrl="/"
+        />
+      </Init>
     </div>
   );
 };

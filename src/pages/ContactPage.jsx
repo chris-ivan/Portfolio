@@ -10,6 +10,7 @@ import { Template } from "./Template/Template";
 import GridDecor from "../images/decorations/grid.svg";
 import VideoDecor from "../images/decorations/video.svg";
 import LaptopDecor from "../images/png/laptop.png";
+import { Init } from "../components/Animations/Init";
 
 const emailUrl = "http://localhost:5000/mail/sendEmail";
 
@@ -82,50 +83,54 @@ export const ContactPage = () => {
           />
         </div>
         <div className="contact-container">
-          <H2>Let'sConnect</H2>
-          {text}
-          <form className="contact-form">
-            <div className="upper-form">
+          <Init>
+            <H2>Let'sConnect</H2>
+          </Init>
+          <Init delay={0.2}>{text}</Init>
+          <Init delay={0.4}>
+            <form className="contact-form">
+              <div className="upper-form">
+                <Input
+                  value={name}
+                  label="Name"
+                  placeholder="Hello there!"
+                  onChange={setName}
+                  autofocus
+                  validators={{
+                    max: 100,
+                    required: true,
+                  }}
+                />
+                <Input
+                  value={email}
+                  label="Email"
+                  placeholder="have@nice.day"
+                  onChange={setEmail}
+                  validators={{
+                    max: 100,
+                    required: true,
+                    isEmail: true,
+                  }}
+                />
+              </div>
               <Input
-                value={name}
-                label="Name"
-                placeholder="Hello there!"
-                onChange={setName}
-                autofocus
+                value={content}
+                label="Message"
+                placeholder="What's going on?"
+                onChange={setContent}
                 validators={{
-                  max: 100,
                   required: true,
                 }}
+                textarea
               />
-              <Input
-                value={email}
-                label="Email"
-                placeholder="have@nice.day"
-                onChange={setEmail}
-                validators={{
-                  max: 100,
-                  required: true,
-                  isEmail: true,
-                }}
+              <Button
+                label="Send"
+                loading={loading}
+                onClick={handleSubmit}
+                primary
               />
-            </div>
-            <Input
-              value={content}
-              label="Message"
-              placeholder="What's going on?"
-              onChange={setContent}
-              validators={{
-                required: true,
-              }}
-              textarea
-            />
-            <Button
-              label="Send"
-              loading={loading}
-              onClick={handleSubmit}
-              primary
-            />
-          </form>
+            </form>
+          </Init>
         </div>
       </div>
     </Template>

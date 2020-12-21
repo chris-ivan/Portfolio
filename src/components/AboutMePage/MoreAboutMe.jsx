@@ -5,6 +5,7 @@ import { BadgeContainer } from "../Badge/BadgeContainer";
 
 import Image from "../../images/decorations/image.svg";
 import Grid from "../../images/decorations/grid.svg";
+import { Init } from "../Animations/Init";
 
 const education = [
   { label: "Bandung Institute of Technology" },
@@ -32,10 +33,18 @@ const certificates = [
 export const MoreAboutMe = () => {
   return (
     <div className="more-about-container">
-      <H2>MoreAboutMe</H2>
-      <BadgeContainer title="Education" badges={education} />
-      <BadgeContainer title="Experiences" badges={experiences} />
-      <BadgeContainer title="Certifications" badges={certificates} />
+      <Init>
+        <H2>MoreAboutMe</H2>
+      </Init>
+      <Init delay={0.2}>
+        <BadgeContainer title="Education" badges={education} />
+      </Init>
+      <Init delay={0.4}>
+        <BadgeContainer title="Experiences" badges={experiences} />
+      </Init>
+      <Init delay={0.6}>
+        <BadgeContainer title="Certifications" badges={certificates} />
+      </Init>
       <img
         src={Image}
         alt="more-decor"

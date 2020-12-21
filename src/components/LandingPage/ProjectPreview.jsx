@@ -7,6 +7,8 @@ import { ReactComponent as Web } from "../../images/icons/Web.svg";
 import { ReactComponent as Github } from "../../images/icons/Github.svg";
 import { ReactComponent as Figma } from "../../images/icons/Figma.svg";
 import { ReactComponent as RightArrow } from "../../images/icons/RightArrow.svg";
+import { Init } from "../Animations/Init";
+import { motion } from "framer-motion";
 
 export const ProjectPreview = ({
   src,
@@ -22,61 +24,79 @@ export const ProjectPreview = ({
 }) => {
   return (
     <div className="project-preview">
-      <div className="project-preview-image">
-        <Image
-          src={src}
-          tinySrc={tinySrc}
-          className="project-preview-image-bg"
-          alt="project-preview"
-          progressive
-        />
-      </div>
       <div className="project-preview-inner">
+        <div className="project-preview-image">
+          <Image
+            src={src}
+            tinySrc={tinySrc}
+            className="project-preview-image-bg"
+            alt="project-preview"
+            progressive
+          />
+        </div>
         <div className="project-preview-title">
-          <h3>{title}</h3>
+          <Init delay={0.2}>
+            <h3>{title}</h3>
+          </Init>
         </div>
         <div className="project-preview-content">
-          {desc}
-          <div className="project-preview-buttons">
-            <Button
-              icon={Web}
-              label="Web"
-              iconPosition="left"
-              link={webUrl}
-              small
-            />
-            <Button
-              icon={Github}
-              label="Github"
-              iconPosition="left"
-              link={githubUrl}
-              small
-            />
-            <Button
-              icon={Figma}
-              label="Figma"
-              iconPosition="left"
-              link={figmaUrl}
-              small
-            />
-            <Button
-              icon={RightArrow}
-              label="More"
-              iconPosition="right"
-              link={arrowUrl}
-              small
-              primary
-            />
-          </div>
+          <Init delay={0.4}>
+            {desc}
+            <div className="project-preview-buttons">
+              <Button
+                icon={Web}
+                label="Web"
+                iconPosition="left"
+                link={webUrl}
+                small
+              />
+              <Button
+                icon={Github}
+                label="Github"
+                iconPosition="left"
+                link={githubUrl}
+                small
+              />
+              <Button
+                icon={Figma}
+                label="Figma"
+                iconPosition="left"
+                link={figmaUrl}
+                small
+              />
+              <Button
+                icon={RightArrow}
+                label="More"
+                iconPosition="right"
+                link={arrowUrl}
+                small
+                primary
+              />
+            </div>
+          </Init>
         </div>
       </div>
       <div className="project-preview-screenshoot">
-        <img src={tab} className="project-preview-screenshoot-tab" alt="tab" />
-        <img
-          src={phone}
-          className="project-preview-screenshoot-phone"
-          alt="phone"
-        />
+        <Init delay={0.6}>
+          <motion.img
+            drag
+            dragConstraints={{ left: -25, top: -25, right: 25, bottom: 25 }}
+            dragElastic={0.7}
+            src={phone}
+            className="project-preview-screenshoot-phone"
+            alt="phone"
+          />
+        </Init>
+        <Init delay={0.8}>
+          <motion.img
+            drag
+            dragConstraints={{ left: -25, top: -25, right: 25, bottom: 25 }}
+            dragElastic={0.7}
+            src={tab}
+            className="project-preview-screenshoot-tab"
+            alt="tab"
+          />
+        </Init>
       </div>
     </div>
   );

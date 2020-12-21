@@ -51,16 +51,23 @@
 
 .project-preview-screenshoot {
   @include setup_size(95vw, 85vh);
+  // pointer-events: none;
   position: absolute;
-  pointer-events: none;
-  & > * {
+  & .init-container {
+    @include setup_size(100%, 100%);
     position: absolute;
+    img {
+      position: absolute;
+    }
   }
   &-phone {
+    z-index: 10;
+    cursor: grab;
     @include setup_decor(2%, 3%, auto, auto, 20%, auto);
   }
   &-tab {
     z-index: 10;
+    cursor: grab;
     @include setup_decor(auto, 7%, 2%, auto, auto, 60%);
   }
 }

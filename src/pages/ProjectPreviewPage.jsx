@@ -24,6 +24,7 @@ import sanityClient from "../client";
 import GridDecor from "../images/decorations/grid.svg";
 import VideoDecor from "../images/decorations/video.svg";
 import LaptopDecor from "../images/png/laptop.png";
+import { Init } from "../components/Animations/Init";
 
 // const projectThumbnails = [
 //   {
@@ -141,18 +142,20 @@ export const ProjectPreviewPage = () => {
             config={{ stiffness: 60, damping: 10 }}
             style={{ height: "calc(100vh - 140px)" }}
           >
-            {allProjects.map((project) => (
-              <ProjectCard
-                className="horizontal-scroll"
-                src={project.previewImage.asset.url}
-                tinySrc={project.loadingImage.asset.url}
-                key={project.title}
-                title={project.title}
-                tags={project.tags}
-                isComingSoon={project.isComingSoon}
-                isOngoing={project.isOngoing}
-                slug={project.slug.current}
-              />
+            {allProjects.map((project, idx) => (
+              <Init delay={idx * 0.2}>
+                <ProjectCard
+                  className="horizontal-scroll"
+                  src={project.previewImage.asset.url}
+                  tinySrc={project.loadingImage.asset.url}
+                  key={project.title}
+                  title={project.title}
+                  tags={project.tags}
+                  isComingSoon={project.isComingSoon}
+                  isOngoing={project.isOngoing}
+                  slug={project.slug.current}
+                />
+              </Init>
             ))}
           </HorizontalScroll>
         )}

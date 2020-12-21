@@ -15,6 +15,7 @@ import { BottomNavigation } from "../components/ProjectPage/BottomNavigation";
 import GridDecor from "../images/decorations/grid.svg";
 import VideoDecor from "../images/decorations/video.svg";
 import LaptopDecor from "../images/png/laptop.png";
+import { Init } from "../components/Animations/Init";
 
 export const ProjectPage = () => {
   const [projectData, setProjectData] = useState(null);
@@ -150,23 +151,31 @@ export const ProjectPage = () => {
           />
         </div>
         {projectData && (
-          <div className="projectPage-content">
-            <H2>{projectData.title}</H2>
-            <Carousel data={projectData.carousel} />
-            <h3 className="projectPage-title">About this Project</h3>
-            <BlockContent blocks={projectData.body} />
-            <br className="Br" />
-            <BadgeContainer
-              title="Technologies"
-              width="100%"
-              badges={getTechArray()}
-            />
-            <BottomNavigation
-              prevProject={getPrevProject()}
-              nextProject={getNextProject()}
-              links={getLinkArray()}
-            />
-          </div>
+          <Init>
+            <div className="projectPage-content">
+              <Init>
+                <H2>{projectData.title}</H2>
+              </Init>
+              <Carousel data={projectData.carousel} />
+              <Init delay={0.2}>
+                <h3 className="projectPage-title">About this Project</h3>
+                <BlockContent blocks={projectData.body} />
+                <br className="Br" />
+              </Init>
+              <Init delay={0.4}>
+                <BadgeContainer
+                  title="Technologies"
+                  width="100%"
+                  badges={getTechArray()}
+                />
+              </Init>
+              <BottomNavigation
+                prevProject={getPrevProject()}
+                nextProject={getNextProject()}
+                links={getLinkArray()}
+              />
+            </div>
+          </Init>
         )}
       </div>
     </Template>

@@ -4,6 +4,7 @@
 .main-container {
   @include flex_center(row);
   @include setup_size(100%, 100%);
+  overflow: hidden;
   .landing-main-text {
     transform: translateY(-5vh);
     h4 {
@@ -14,9 +15,12 @@
   .landing-main-image-container {
     @include flex_center(row);
     transform: translateX(5vw);
-    height: 90vh;
-    width: 40vw;
+    @include setup_size(40vw, 90vh);
     padding: 5% 7.5%;
+  }
+  .landing-main-image-inner-container {
+    @include setup_size(100%, 100%);
+    cursor: grab;
   }
 }
 
@@ -54,6 +58,22 @@
 .scroll-down-icon {
   position: absolute;
   @include setup_decor(auto, auto, 5%, 50%, auto, 6%);
+  animation: down-arrow 3s cubic-bezier(0.21, 0.01, 0.39, 0.93) infinite;
+}
+
+@keyframes down-arrow {
+  0% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
 }
 
 @media screen and (max-width: $breakpoint-medium) {

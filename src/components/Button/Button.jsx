@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "./Button.scss";
 
@@ -31,6 +32,9 @@ export const Button = ({
       )}
     </div>
   );
+
+  const hoverInteraction = { scale: 1.02, transition: { duration: 0.25 } };
+  const tapInteraction = { scale: 0.98, transition: { duration: 0.25 } };
   return (
     <div
       className={`button-container ${
@@ -41,19 +45,33 @@ export const Button = ({
     >
       {link && (
         <Link to={link}>
-          <button>{content}</button>
+          <motion.button
+            whileHover={hoverInteraction}
+            whileTap={tapInteraction}
+          >
+            {content}
+          </motion.button>
         </Link>
       )}
       {outLink && (
         <a href={outLink} target="_blank" rel="noopener noreferrer">
-          <button>{content}</button>
+          <motion.button
+            whileHover={hoverInteraction}
+            whileTap={tapInteraction}
+          >
+            {content}
+          </motion.button>
         </a>
       )}
       {onClick && (
-        <button onClick={onClick}>
+        <motion.button
+          whileHover={hoverInteraction}
+          whileTap={tapInteraction}
+          onClick={onClick}
+        >
           <Loading className="loading-animation" />
           {content}
-        </button>
+        </motion.button>
       )}
     </div>
   );

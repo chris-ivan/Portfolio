@@ -3,6 +3,7 @@
 
 .badge {
   background: $lighterBlack;
+  transition: $defaultTransition;
   padding: 7px 10px;
   width: fit-content;
   display: flex;
@@ -13,9 +14,21 @@
     @include setup_size(30px, 30px);
     transform: scale(0.85);
   }
-  &-icon-white path,
-  &-icon-white svg {
-    fill: $white;
+  // svg,
+  // path {
+  //   transition: $defaultTransition;
+  // }
+  // &-icon-white:not(:hover) {
+  //   path,
+  //   svg {
+  //     fill: $white;
+  //     // opacity: 0.5;
+  //   }
+  // }
+
+  &:hover {
+    background: $darkBlue;
+    transform: scale(1.01) translateY(-2px);
   }
 }
 

@@ -24,6 +24,7 @@ import { ReactComponent as Figma } from "../../images/icons/Figma.svg";
 import Video from "../../images/decorations/video.svg";
 import Sphere from "../../images/decorations/sphere.svg";
 import Laptop from "../../images/png/laptop.png";
+import { Init } from "../Animations/Init";
 
 const frontend = [
   {
@@ -112,10 +113,18 @@ const design = [
 export const TechStack = () => {
   return (
     <div className="techStack-container">
-      <H2>MyTechStack</H2>
-      <BadgeContainer title="Frontend" badges={frontend} />
-      <BadgeContainer title="Tools & Languages" badges={tools} />
-      <BadgeContainer title="Design" badges={design} />
+      <Init>
+        <H2>MyTechStack</H2>
+      </Init>
+      <Init delay={0.2}>
+        <BadgeContainer title="Frontend" badges={frontend} />
+      </Init>
+      <Init delay={0.4}>
+        <BadgeContainer title="Tools & Languages" badges={tools} />
+      </Init>
+      <Init delay={0.6}>
+        <BadgeContainer title="Design" badges={design} />
+      </Init>
       <div className="tech-stack-decoration">
         <img
           src={Sphere}
