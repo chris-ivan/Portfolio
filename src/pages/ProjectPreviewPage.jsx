@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HorizontalScroll from "../shared/ScrollHorizontal";
+import { toast } from "react-toastify";
 import "./ProjectPreviewPage.scss";
 import { ProjectCard } from "../components/ProjectPreviewPage/ProjectCard";
 import { Template } from "./Template/Template";
@@ -95,7 +96,12 @@ export const ProjectPreviewPage = () => {
       .then((data) => {
         setAllProjects(data);
       })
-      .catch(console.error);
+      .catch((err) => {
+        console.log(err);
+        toast.dark(
+          "Unfortunately, I can't afford regular CMS pricing, so we'll have to wait a month until the monthly CMS usage is restart :( "
+        );
+      });
   }, []);
 
   /* {projectThumbnails.map((project) => (

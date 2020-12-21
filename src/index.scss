@@ -16,7 +16,7 @@
   &::-webkit-scrollbar-thumb {
     background-color: rgb(28, 58, 109); /* color of the scroll thumb */
     opacity: 0.5;
-    transition: all 0.2s ease-in-out;
+    transition: $defaultTransition;
     &:hover {
       background-color: rgb(45, 84, 151);
       opacity: 1;

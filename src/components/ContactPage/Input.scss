@@ -21,6 +21,11 @@
     padding: 16px 10px 10px;
     font-family: inherit;
     font-size: $p-size;
+    transition: $defaultTransition;
+  }
+  input:focus,
+  textarea:focus {
+    border: 1px solid $blue;
   }
   .error-message {
     margin-top: 4px;

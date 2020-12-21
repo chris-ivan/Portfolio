@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import sanityClient from "../client";
 import BlockContent from "@sanity/block-content-to-react";
 import "./ProjectPage.scss";
@@ -53,7 +54,12 @@ export const ProjectPage = () => {
       .then((data) => {
         setProjectData(data);
       })
-      .catch(console.error);
+      .catch((err) => {
+        console.log(err);
+        toast.dark(
+          "Unfortunately, I can't afford regular CMS pricing, so we'll have to wait a month until the monthly CMS usage is restart :( "
+        );
+      });
   }, [id]);
 
   const getTechArray = () => {

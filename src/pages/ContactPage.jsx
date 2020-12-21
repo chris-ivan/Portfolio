@@ -53,7 +53,7 @@ export const ContactPage = () => {
     } else {
       await sendEmail(data);
       toast.dark("Thank you! I will reply to you soon!");
-      console.log(data);
+      // console.log(data);
       setName({ value: "", isValid: false });
       setEmail({ value: "", isValid: false });
       setContent({ value: "", isValid: false });
@@ -91,6 +91,7 @@ export const ContactPage = () => {
                 label="Name"
                 placeholder="Hello there!"
                 onChange={setName}
+                autofocus
                 validators={{
                   max: 100,
                   required: true,

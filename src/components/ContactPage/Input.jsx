@@ -9,6 +9,7 @@ export const Input = ({
   onChange,
   validators,
   textarea,
+  autofocus,
 }) => {
   const [error, setError] = useState("");
 

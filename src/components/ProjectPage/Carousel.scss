@@ -33,7 +33,7 @@
 .carousel-prev,
 .carousel-next {
   &::before {
-    transition: all 0.25s ease-in-out;
+    transition: $defaultTransition;
   }
   &:hover {
     opacity: 1;
@@ -63,7 +63,7 @@
 .carousel-dots {
   li button::before {
     color: $lightGrey !important;
-    transition: all 0.25s ease-in-out;
+    transition: $defaultTransition;
     transform: scale(0.7);
   }
   &:hover li button::before {

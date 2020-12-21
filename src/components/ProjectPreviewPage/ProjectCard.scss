@@ -25,12 +25,13 @@
     padding: 15px;
     p {
       color: $lightBlue;
+      font-weight: 600;
     }
     &-tags {
       display: flex;
 
       & > * {
-        color: $lightGrey;
+        color: $white;
         &:not(:last-child):after {
           content: " | ";
           margin-right: 4px;
@@ -76,5 +77,23 @@
   .projectCard {
     top: 5vh;
     @include setup_size(60vw, 70vh);
+    &-info {
+      padding: 10px;
+      p {
+        font-size: medium;
+        margin-bottom: 2px;
+      }
+      &-tags {
+        display: flex;
+        flex-wrap: wrap;
+        & > * {
+          font-size: 12px;
+          &:not(:last-child):after {
+            content: " | ";
+            margin-right: 4px;
+          }
+        }
+      }
+    }
   }
 }
