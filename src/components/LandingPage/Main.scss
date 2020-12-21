@@ -54,3 +54,101 @@
   position: absolute;
   @include setup_decor(auto, auto, 5%, 50%, auto, 6%);
 }
+
+@media screen and (max-width: $breakpoint-medium) {
+  .main-container {
+    @include setup_size(100%, 90vh);
+    position: relative;
+    overflow-x: hidden;
+    .landing-main-text {
+      transform: translate(10vw, -5vh) scale(1.2);
+      z-index: 20;
+    }
+    .landing-main-image-container {
+      @include flex_center(row);
+      @include setup_size(55vw, 60vh);
+      transform: translate(5vw, 0);
+    }
+  }
+
+  .landing-page-main-decorations {
+    @include setup_size(110vw, 100%);
+  }
+
+  .decorations {
+    &-profile {
+      @include setup_decor(auto, -10%, 10%, auto, auto, 10%);
+    }
+    &-avatar {
+      @include setup_decor(auto, 50%, 20%, auto, 13%, auto);
+    }
+    &-love {
+      @include setup_decor(auto, 8%, 45%, auto, 10%, auto);
+      transform: rotate(5deg);
+    }
+    &-shard {
+      @include setup_decor(-10%, 5%, auto, auto, 40%, auto);
+    }
+    &-image {
+      @include setup_decor(auto, auto, 10%, -10%, auto, 20%);
+    }
+    &-bubble {
+      @include setup_decor(10%, auto, auto, -2%, 20%, auto);
+    }
+  }
+
+  .scroll-down-icon {
+    position: absolute;
+    @include setup_decor(auto, auto, 0%, 45%, auto, 5%);
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .main-container {
+    .landing-main-text {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @include setup_size(100%, 105%);
+      transform: translate(0, -5vh) scale(0.8);
+      z-index: 20;
+    }
+    .landing-main-image-container {
+      @include setup_size(70vw, 47vh);
+      transform: translate(0, -12vh);
+    }
+  }
+
+  .landing-page-main-decorations {
+    @include setup_size(110vw, 100%);
+  }
+
+  .decorations {
+    &-profile {
+      @include setup_decor(auto, -10%, 10%, auto, auto, 10%);
+    }
+    &-avatar {
+      @include setup_decor(45%, auto, auto, 10%, 18%, auto);
+    }
+    &-love {
+      display: none;
+    }
+    &-shard {
+      @include setup_decor(-10%, 5%, auto, auto, 40%, auto);
+    }
+    &-image {
+      @include setup_decor(auto, -10%, 50%, auto, auto, 20%);
+      opacity: 0.15;
+    }
+    &-bubble {
+      @include setup_decor(15%, auto, auto, -2%, 20%, auto);
+      opacity: 0.15;
+    }
+  }
+
+  .scroll-down-icon {
+    position: absolute;
+    @include setup_decor(auto, 20%, 5%, auto, auto, 7%);
+  }
+}

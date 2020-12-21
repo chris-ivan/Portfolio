@@ -18,3 +18,30 @@
     @include setup_decor(auto, auto, 0, -10%, auto, auto);
   }
 }
+
+@media screen and (max-width: $breakpoint-medium) {
+  .decorations-more {
+    &-grid {
+      @include setup_decor(-20%, 0, auto, auto, 70%, auto);
+      opacity: 0.025;
+    }
+    &-image {
+      @include setup_decor(auto, auto, 0, -10%, 40%, auto);
+      opacity: 0.2;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .decorations-more {
+    overflow-x: hidden;
+    &-grid {
+      @include setup_decor(-20%, 0, auto, auto, 100%, auto);
+      opacity: 0.025;
+    }
+    &-image {
+      @include setup_decor(auto, auto, -5%, -10%, 40%, auto);
+      opacity: 0.15;
+    }
+  }
+}

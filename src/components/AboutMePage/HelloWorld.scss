@@ -17,3 +17,35 @@
 .decorations-hello-shard {
   @include setup_decor(5%, 0, auto, auto, 30%, auto);
 }
+
+@media screen and (max-width: $breakpoint-medium) {
+  .hello-world {
+    @include setup_size(100%, 40vh);
+    margin: 12vh 0 5vh;
+    &-desc {
+      & > * {
+        margin: 2vh 0;
+      }
+    }
+    &-image {
+      @include setup_size(30%, 80%);
+      margin-left: 5vw;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .hello-world {
+    @include setup_size(100%, auto);
+    @include flex_center(column);
+    margin: 12vh auto 5vh;
+    &-desc {
+      @include flex_center(column);
+      @include setup_size(80%, 100%);
+    }
+    &-image {
+      @include setup_size(70%, 80%);
+      margin: 5vw;
+    }
+  }
+}

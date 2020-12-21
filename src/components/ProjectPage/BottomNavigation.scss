@@ -51,3 +51,31 @@
     }
   }
 }
+
+@media screen and (max-width: $breakpoint-medium) {
+  .bottom-navigation {
+    margin: 2vh 0 8vh;
+    @include flex_center(column);
+    &-center {
+      transform: translateY(0);
+      margin-bottom: 1vh;
+    }
+    &-side {
+      @include setup_size(100%, 5vh);
+      position: relative;
+      & > * {
+        margin: 2vh 2vw 0;
+      }
+    }
+    &-left {
+      &-top {
+        justify-content: flex-start;
+      }
+    }
+    &-right {
+      &-top {
+        justify-content: flex-end;
+      }
+    }
+  }
+}

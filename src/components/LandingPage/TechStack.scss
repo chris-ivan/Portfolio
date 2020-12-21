@@ -6,9 +6,6 @@
   @include flex_center(column);
   margin: 15vh 0;
   position: relative;
-  h2 {
-    margin-bottom: 5vh;
-  }
 }
 
 .tech-stack-decoration {
@@ -28,5 +25,11 @@
   }
   &-laptop {
     @include setup_decor(auto, -10%, 0, auto, 35%, auto);
+  }
+}
+
+@media screen and (max-width: $breakpoint-medium) {
+  .techStack-container {
+    margin: 5vh 0;
   }
 }

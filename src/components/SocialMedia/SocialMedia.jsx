@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./SocialMedia.scss";
 
 import { ReactComponent as LinkedIn } from "../../images/icons/LinkedIn.svg";

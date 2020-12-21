@@ -45,18 +45,20 @@ export const Favourites = () => {
       <H2>Trivia</H2>
       <div className="favourites-table">
         <table>
-          {favourites.map((fav) => (
-            <tr key={fav.left}>
-              <td className="left-table">
-                <p>{fav.left}</p>
-              </td>
-              <td className="right-table">
-                {fav.right.map((ans) => (
-                  <p key={ans}>{ans}</p>
-                ))}
-              </td>
-            </tr>
-          ))}
+          <tbody>
+            {favourites.map((fav) => (
+              <tr key={fav.left}>
+                <td className="left-table">
+                  <p>{fav.left}</p>
+                </td>
+                <td className="right-table">
+                  {fav.right.map((ans) => (
+                    <p key={ans}>{ans}</p>
+                  ))}
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
       <img

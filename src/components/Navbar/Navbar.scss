@@ -35,3 +35,12 @@
     margin-right: 3vw;
   }
 }
+
+@media screen and (max-width: $breakpoint-small) {
+  .navbar {
+    @include flex_center(row);
+    & > * {
+      margin: 0 2vw;
+    }
+  }
+}

@@ -99,3 +99,46 @@
     opacity: 0;
   }
 }
+
+@media screen and (max-width: $breakpoint-small) {
+  .button-container {
+    button {
+      .button-content {
+        h4 {
+          font-size: 120%;
+        }
+      }
+    }
+    &-large {
+      &-primary button {
+        padding: 8px 20px;
+      }
+      &-secondary button {
+        padding: 8px 20px;
+      }
+    }
+    &-small {
+      &-primary button {
+        padding: 2px 5px;
+        border: 1.5px solid $lightBlue;
+        svg,
+        path {
+          fill: $lightBlue;
+        }
+        svg {
+          transform: scale(0.8);
+        }
+        .button-content {
+          color: $lightBlue;
+        }
+      }
+      &-secondary button {
+        padding: 2px 5px;
+      }
+    }
+  }
+
+  .button-icon {
+    transform: scale(0.9);
+  }
+}

@@ -7,6 +7,10 @@ import { Input } from "../components/ContactPage/Input";
 import { H2 } from "../components/Heading/Heading";
 import { Template } from "./Template/Template";
 
+import GridDecor from "../images/decorations/grid.svg";
+import VideoDecor from "../images/decorations/video.svg";
+import LaptopDecor from "../images/png/laptop.png";
+
 const emailUrl = "http://localhost:5000/mail/sendEmail";
 
 const text = (
@@ -60,6 +64,23 @@ export const ContactPage = () => {
   return (
     <Template>
       <div className="contact">
+        <div className="contact-decorations">
+          <img
+            src={GridDecor}
+            alt="decor"
+            className="decorations decorations-back decorations-contact-grid"
+          />
+          <img
+            src={VideoDecor}
+            alt="decor"
+            className="decorations decorations-back decorations-contact-video"
+          />
+          <img
+            src={LaptopDecor}
+            alt="decor"
+            className="decorations decorations-back decorations-contact-laptop"
+          />
+        </div>
         <div className="contact-container">
           <H2>Let'sConnect</H2>
           {text}

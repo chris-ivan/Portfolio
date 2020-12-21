@@ -7,23 +7,19 @@ import { ReactComponent as LeftArrow } from "../../images/icons/BlueLeftArrow.sv
 import { ReactComponent as RightArrow } from "../../images/icons/BlueRightArrow.svg";
 
 export const BottomNavigation = ({ prevProject, nextProject, links }) => {
-  console.log(links);
   return (
     <div className="bottom-navigation">
       <div className="bottom-navigation-center">
-        {links.map((link) => {
-          console.log(link);
-          return (
-            <Button
-              icon={link.component}
-              label={link.label}
-              key={link.label}
-              iconPosition="left"
-              outLink={link.url}
-              small
-            />
-          );
-        })}
+        {links.map((link) => (
+          <Button
+            icon={link.component}
+            label={link.label}
+            key={link.label}
+            iconPosition="left"
+            outLink={link.url}
+            small
+          />
+        ))}
       </div>
       <div className="bottom-navigation-side">
         <Link className="bottom-navigation-left" to={prevProject.url}>

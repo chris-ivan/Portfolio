@@ -10,3 +10,18 @@
     font-size: small;
   }
 }
+
+@media screen and (max-width: $breakpoint-medium) {
+  .footer {
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .footer {
+    padding: 25px;
+    p {
+      display: none;
+    }
+  }
+}

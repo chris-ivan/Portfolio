@@ -149,7 +149,7 @@ export const ProjectPage = () => {
             <Carousel data={projectData.carousel} />
             <h3 className="projectPage-title">About this Project</h3>
             <BlockContent blocks={projectData.body} />
-            <br />
+            <br className="Br" />
             <BadgeContainer
               title="Technologies"
               width="100%"

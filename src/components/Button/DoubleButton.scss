@@ -3,9 +3,9 @@
 
 .double-button {
   @include setup_size(100%, auto);
-  margin: 3vh 0;
-  @include flex_center(row);
+  margin: 1vh 0;
+  @include flex_center(row-reverse);
   & > * {
-    margin: 0 10px;
+    margin: 0 5px;
   }
 }

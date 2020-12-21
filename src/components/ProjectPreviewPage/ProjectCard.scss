@@ -64,3 +64,17 @@
     z-index: -10;
   }
 }
+
+@media screen and (max-width: $breakpoint-medium) {
+  .projectCard {
+    top: 3vh;
+    @include setup_size(60vw, 80vh);
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .projectCard {
+    top: 5vh;
+    @include setup_size(60vw, 70vh);
+  }
+}

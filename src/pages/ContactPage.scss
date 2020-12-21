@@ -25,3 +25,72 @@
     }
   }
 }
+
+.contact-decorations {
+  @include setup_size(100%, 100%);
+  pointer-events: none;
+  position: absolute;
+  overflow: hidden;
+  .decorations-contact {
+    &-grid {
+      @include setup_decor(-50%, auto, auto, 0, auto, 80%);
+      transform: scaleX(-1);
+      opacity: 0.04;
+    }
+    &-video {
+      @include setup_decor(80vh, auto, auto, -10%, auto, 40%);
+      opacity: 0.1;
+    }
+    &-laptop {
+      @include setup_decor(auto, 0, 0, auto, auto, 80%);
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-medium) {
+  .contact-decorations {
+    @include setup_size(100%, 120vh);
+    .decorations-contact {
+      &-grid {
+        @include setup_decor(0, auto, auto, 0, 80%, auto);
+        opacity: 0.03;
+      }
+      &-video {
+        @include setup_decor(70vh, -15%, auto, auto, 50%, auto);
+        opacity: 0.1;
+      }
+      &-laptop {
+        @include setup_decor(auto, auto, 0, -20%, auto, 30%);
+        transform: scaleX(-1);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .contact-form {
+    margin: 3vh 0;
+    & > * {
+      margin: 2vh 0;
+      float: right;
+    }
+    .upper-form {
+      @include setup_size(100%, auto);
+      @include flex_center(column);
+      grid-gap: 2.5vh;
+      & > * {
+        margin: 0;
+        @include setup_size(100%, auto);
+      }
+    }
+  }
+
+  .contact-decorations {
+    @include setup_size(100%, 90vh);
+    .decorations-contact {
+      &-video {
+        @include setup_decor(50vh, -15%, auto, auto, 50%, auto);
+      }
+    }
+  }
+}

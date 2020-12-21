@@ -31,3 +31,15 @@
     }
   }
 }
+
+@media screen and (max-width: $breakpoint-medium) {
+  .projectpreviewpage-decorations {
+    @include setup_size(100%, 100%);
+    .decorations-project {
+      &-grid {
+        @include setup_decor(-20%, 0, auto, auto, auto, 70%);
+        opacity: 0.05;
+      }
+    }
+  }
+}

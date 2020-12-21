@@ -74,3 +74,9 @@
     transform: scale(1);
   }
 }
+
+@media screen and (max-width: $breakpoint-small) {
+  .carousel-dots {
+    margin: 0 !important;
+  }
+}
