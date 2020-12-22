@@ -8,11 +8,16 @@
   display: flex;
   position: relative;
   overflow-x: hidden;
+  overflow-y: visible !important;
   &::-webkit-scrollbar {
     display: none;
   }
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.scroll-horizontal {
+  overflow-y: visible !important;
 }
 
 .projectpreviewpage-decorations {

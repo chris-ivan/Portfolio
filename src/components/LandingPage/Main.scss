@@ -5,6 +5,7 @@
   @include flex_center(row);
   @include setup_size(100%, 100%);
   overflow: hidden;
+  position: relative;
   .landing-main-text {
     transform: translateY(-5vh);
     h4 {
@@ -21,6 +22,18 @@
   .landing-main-image-inner-container {
     @include setup_size(100%, 100%);
     cursor: grab;
+    img {
+      transition: $defaultTransition;
+    }
+    &:active {
+      cursor: grabbing;
+    }
+    &:hover {
+      img {
+        transform: scale(1.02);
+        filter: contrast(103%);
+      }
+    }
   }
 }
 
@@ -101,7 +114,7 @@
       @include setup_decor(auto, -10%, 10%, auto, auto, 10%);
     }
     &-avatar {
-      @include setup_decor(auto, 50%, 20%, auto, 13%, auto);
+      @include setup_decor(auto, auto, 10%, 15%, 13%, auto);
     }
     &-love {
       @include setup_decor(auto, 8%, 45%, auto, 10%, auto);
@@ -120,7 +133,7 @@
 
   .scroll-down-icon {
     position: absolute;
-    @include setup_decor(auto, auto, 0%, 45%, auto, 5%);
+    @include setup_decor(auto, auto, 2%, 45%, auto, 5%);
   }
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import Ripples from "react-ripples";
 import "./Button.scss";
 
 import { ReactComponent as Loading } from "../../images/decorations/loading.svg";
@@ -36,43 +37,33 @@ export const Button = ({
   const hoverInteraction = { scale: 1.02, transition: { duration: 0.25 } };
   const tapInteraction = { scale: 0.98, transition: { duration: 0.25 } };
   return (
-    <div
+    <motion.div
+      whileHover={hoverInteraction}
+      whileTap={tapInteraction}
       className={`button-container ${
         loading && "button-loading"
       } button-container${small ? "-small" : "-large"}${
         primary ? "-primary" : "-secondary"
       }`}
     >
-      {link && (
-        <Link to={link}>
-          <motion.button
-            whileHover={hoverInteraction}
-            whileTap={tapInteraction}
-          >
+      <Ripples>
+        {link && (
+          <Link to={link}>
+            <button>{content}</button>
+          </Link>
+        )}
+        {outLink && (
+          <a href={outLink} target="_blank" rel="noopener noreferrer">
+            <button>{content}</button>
+          </a>
+        )}
+        {onClick && (
+          <button onClick={onClick}>
+            <Loading className="loading-animation" />
             {content}
-          </motion.button>
-        </Link>
-      )}
-      {outLink && (
-        <a href={outLink} target="_blank" rel="noopener noreferrer">
-          <motion.button
-            whileHover={hoverInteraction}
-            whileTap={tapInteraction}
-          >
-            {content}
-          </motion.button>
-        </a>
-      )}
-      {onClick && (
-        <motion.button
-          whileHover={hoverInteraction}
-          whileTap={tapInteraction}
-          onClick={onClick}
-        >
-          <Loading className="loading-animation" />
-          {content}
-        </motion.button>
-      )}
-    </div>
+          </button>
+        )}
+      </Ripples>
+    </motion.div>
   );
 };

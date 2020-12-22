@@ -2,13 +2,14 @@
 @import "../../pages/Template/mixin";
 
 .badge {
-  background: $lighterBlack;
+  background: $lighterBlackTransparent;
   transition: $defaultTransition;
   padding: 7px 10px;
   width: fit-content;
   display: flex;
   align-items: center;
   position: relative;
+  backdrop-filter: blur(20px);
   svg {
     margin-right: 7px;
     @include setup_size(30px, 30px);
@@ -42,10 +43,6 @@
     p {
       margin-right: 5px;
       text-align: center;
-    }
-    &-icon-white path,
-    &-icon-white svg {
-      fill: $white;
     }
   }
 }

@@ -47,21 +47,21 @@ export const ProjectPreview = ({
                 icon={Web}
                 label="Web"
                 iconPosition="left"
-                link={webUrl}
+                outLink={webUrl}
                 small
               />
               <Button
                 icon={Github}
                 label="Github"
                 iconPosition="left"
-                link={githubUrl}
+                outLink={githubUrl}
                 small
               />
               <Button
                 icon={Figma}
                 label="Figma"
                 iconPosition="left"
-                link={figmaUrl}
+                outLink={figmaUrl}
                 small
               />
               <Button
@@ -80,7 +80,7 @@ export const ProjectPreview = ({
         <Init delay={0.6}>
           <motion.img
             drag
-            dragConstraints={{ left: -25, top: -25, right: 25, bottom: 25 }}
+            dragConstraints={{ left: -35, top: -35, right: 35, bottom: 35 }}
             dragElastic={0.7}
             src={phone}
             className="project-preview-screenshoot-phone"
@@ -90,7 +90,7 @@ export const ProjectPreview = ({
         <Init delay={0.8}>
           <motion.img
             drag
-            dragConstraints={{ left: -25, top: -25, right: 25, bottom: 25 }}
+            dragConstraints={{ left: -35, top: -35, right: 35, bottom: 35 }}
             dragElastic={0.7}
             src={tab}
             className="project-preview-screenshoot-tab"

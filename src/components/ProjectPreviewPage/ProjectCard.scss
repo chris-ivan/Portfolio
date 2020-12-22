@@ -3,11 +3,21 @@
 
 .projectCard {
   @include setup_size(25vw, 100%);
-  border: 1px solid $darkGrey;
+  border: 1px solid $lighterBlackTransparent;
   box-shadow: $shadowDark;
   background: $lighterBlack;
   margin: 0 5px;
   position: relative;
+  transition: $defaultTransition;
+  &:hover {
+    cursor: pointer;
+    background: $darkBlue;
+    border: 1px solid $blue;
+    img {
+      filter: hue-rotate(90deg) contrast(130%) sepia(30%);
+      transform: scale(1.05);
+    }
+  }
   &-image {
     @include setup_size(100%, 85%);
     overflow: hidden;
@@ -19,6 +29,9 @@
       background: $black;
       opacity: 0.5;
       top: 0;
+    }
+    img {
+      transition: $defaultTransition;
     }
   }
   &-info {

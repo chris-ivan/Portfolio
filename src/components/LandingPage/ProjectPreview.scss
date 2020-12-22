@@ -38,6 +38,7 @@
   padding: 15px 20px 15px 5vw;
   position: absolute;
   top: 20%;
+  z-index: 2;
   .project-preview-buttons {
     @include setup_size(100%, auto);
     display: flex;
@@ -60,15 +61,20 @@
       position: absolute;
     }
   }
-  &-phone {
-    z-index: 10;
+  &-phone,
+  &-tab {
+    z-index: 1;
     cursor: grab;
+    &:active {
+      cursor: grabbing;
+    }
+  }
+  &-phone {
     @include setup_decor(2%, 3%, auto, auto, 20%, auto);
   }
   &-tab {
-    z-index: 10;
-    cursor: grab;
     @include setup_decor(auto, 7%, 2%, auto, auto, 60%);
+    max-width: 50vw;
   }
 }
 
@@ -91,6 +97,7 @@
     &-tab {
       z-index: 10;
       @include setup_decor(auto, -4%, 2%, auto, 85%, auto);
+      max-width: 60vh;
     }
   }
 }

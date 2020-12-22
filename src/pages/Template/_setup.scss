@@ -105,9 +105,10 @@ a {
 @media screen and (max-width: $breakpoint-small) {
   .decorations {
     &-semi-front {
-      z-index: -1;
-      @include set_glow(0);
-      opacity: 0.2;
+      display: none;
+      // z-index: -1;
+      // @include set_glow(0);
+      // opacity: 0.2;
     }
   }
   .code-heading {

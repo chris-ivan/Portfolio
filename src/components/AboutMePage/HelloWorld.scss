@@ -11,6 +11,23 @@
   &-image {
     @include setup_size(25%, 100%);
     margin-left: 5vw;
+    cursor: grab;
+    user-select: none !important;
+    -moz-user-select: none !important;
+    -webkit-user-select: none !important;
+    &:active {
+      cursor: grabbing;
+    }
+    &:hover {
+      img {
+        transform: scale(1.02);
+        filter: contrast(105%);
+      }
+    }
+    img {
+      pointer-events: none;
+      transition: $defaultTransition;
+    }
   }
 }
 
@@ -20,7 +37,7 @@
 
 @media screen and (max-width: $breakpoint-medium) {
   .hello-world {
-    @include setup_size(100%, 40vh);
+    @include setup_size(100%, auto);
     margin: 12vh 0 5vh;
     &-desc {
       & > * {

@@ -1,6 +1,7 @@
 import React from "react";
 import { H2 } from "../Heading/Heading";
 import "./Favourites.scss";
+import { useTransform, Frame } from "framer";
 
 import Laptop from "../../images/png/laptop.png";
 import { Init } from "../Animations/Init";
@@ -40,9 +41,25 @@ const favourites = [
   },
 ];
 
-export const Favourites = () => {
+export const Favourites = ({ pageY }) => {
+  const laptopY = useTransform(pageY, (value) => value / 4);
   return (
     <div className="favourites-container">
+      <Frame
+        background={""}
+        width="100%"
+        height="100%"
+        left="0%"
+        top="35vh"
+        y={laptopY}
+      >
+        <img
+          src={Laptop}
+          alt="decor-again"
+          className="decorations decorations-back decorations-trivia-laptop"
+          style={{ width: "60vw" }}
+        />
+      </Frame>
       <Init>
         <H2>Trivia</H2>
       </Init>
@@ -66,11 +83,6 @@ export const Favourites = () => {
           </table>
         </div>
       </Init>
-      <img
-        src={Laptop}
-        alt="decor-again"
-        className="decorations decorations-back decorations-trivia-laptop"
-      />
     </div>
   );
 };

@@ -53,7 +53,7 @@ export const LatestProjects = () => {
           webUrl="milezeroproject.com"
           githubUrl="https://github.com/ravielze/MZ-FE"
           figmaUrl="https://www.figma.com/proto/oAU5qeWx8q5ChgTp3G6rlE/Milezero?scaling=scale-down-width&node-id=1341%3A4641"
-          arrowUrl="/"
+          arrowUrl="/project/mile-zero-project"
         />
       </Init>
       <Init>
@@ -67,7 +67,7 @@ export const LatestProjects = () => {
           webUrl="http://akumasukitb.com/"
           githubUrl="https://github.com/Chris-Ivan/Web-AMI21"
           figmaUrl="https://www.figma.com/proto/HxkxUi9enVAU3ZpKAq7WgD/AMI-2021?scaling=scale-down&node-id=23%3A6"
-          arrowUrl="/"
+          arrowUrl="/project/aku-masuk-itb-2021"
         />
       </Init>
     </div>
