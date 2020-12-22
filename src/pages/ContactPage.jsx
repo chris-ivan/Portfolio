@@ -12,6 +12,8 @@ import VideoDecor from "../images/decorations/video.svg";
 import LaptopDecor from "../images/png/laptop.png";
 import { Init } from "../components/Animations/Init";
 
+import { motion } from "framer-motion";
+
 const emailUrl = "http://localhost:5000/mail/sendEmail";
 
 const text = (
@@ -64,75 +66,81 @@ export const ContactPage = () => {
 
   return (
     <Template>
-      <div className="contact">
-        <div className="contact-decorations">
-          <img
-            src={GridDecor}
-            alt="decor"
-            className="decorations decorations-back decorations-contact-grid"
-          />
-          <img
-            src={VideoDecor}
-            alt="decor"
-            className="decorations decorations-back decorations-contact-video"
-          />
-          <img
-            src={LaptopDecor}
-            alt="decor"
-            className="decorations decorations-back decorations-contact-laptop"
-          />
-        </div>
-        <div className="contact-container">
-          <Init>
-            <H2>Let'sConnect</H2>
-          </Init>
-          <Init delay={0.2}>{text}</Init>
-          <Init delay={0.4}>
-            <form className="contact-form">
-              <div className="upper-form">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <div className="contact">
+          <div className="contact-decorations">
+            <img
+              src={GridDecor}
+              alt="decor"
+              className="decorations decorations-back decorations-contact-grid"
+            />
+            <img
+              src={VideoDecor}
+              alt="decor"
+              className="decorations decorations-back decorations-contact-video"
+            />
+            <img
+              src={LaptopDecor}
+              alt="decor"
+              className="decorations decorations-back decorations-contact-laptop"
+            />
+          </div>
+          <div className="contact-container">
+            <Init>
+              <H2>Let'sConnect</H2>
+            </Init>
+            <Init delay={0.2}>{text}</Init>
+            <Init delay={0.4}>
+              <form className="contact-form">
+                <div className="upper-form">
+                  <Input
+                    value={name}
+                    label="Name"
+                    placeholder="Hello there!"
+                    onChange={setName}
+                    autofocus
+                    validators={{
+                      max: 100,
+                      required: true,
+                    }}
+                  />
+                  <Input
+                    value={email}
+                    label="Email"
+                    placeholder="have@nice.day"
+                    onChange={setEmail}
+                    validators={{
+                      max: 100,
+                      required: true,
+                      isEmail: true,
+                    }}
+                  />
+                </div>
                 <Input
-                  value={name}
-                  label="Name"
-                  placeholder="Hello there!"
-                  onChange={setName}
-                  autofocus
+                  value={content}
+                  label="Message"
+                  placeholder="What's going on?"
+                  onChange={setContent}
                   validators={{
-                    max: 100,
                     required: true,
                   }}
+                  textarea
                 />
-                <Input
-                  value={email}
-                  label="Email"
-                  placeholder="have@nice.day"
-                  onChange={setEmail}
-                  validators={{
-                    max: 100,
-                    required: true,
-                    isEmail: true,
-                  }}
+                <Button
+                  label="Send"
+                  loading={loading}
+                  onClick={handleSubmit}
+                  primary
                 />
-              </div>
-              <Input
-                value={content}
-                label="Message"
-                placeholder="What's going on?"
-                onChange={setContent}
-                validators={{
-                  required: true,
-                }}
-                textarea
-              />
-              <Button
-                label="Send"
-                loading={loading}
-                onClick={handleSubmit}
-                primary
-              />
-            </form>
-          </Init>
+              </form>
+            </Init>
+          </div>
         </div>
-      </div>
+      </motion.div>
     </Template>
   );
 };

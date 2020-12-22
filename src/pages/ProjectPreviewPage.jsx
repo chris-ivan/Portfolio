@@ -26,6 +26,8 @@ import VideoDecor from "../images/decorations/video.svg";
 import LaptopDecor from "../images/png/laptop.png";
 import { Init } from "../components/Animations/Init";
 
+import { motion } from "framer-motion";
+
 // const projectThumbnails = [
 //   {
 //     src: MZThumb,
@@ -117,49 +119,55 @@ export const ProjectPreviewPage = () => {
           ))} */
 
   return (
-    <Template>
-      <div className="projectpreviewpage-container">
-        <div className="projectpreviewpage-decorations">
-          <img
-            src={GridDecor}
-            alt="decor"
-            className="decorations decorations-back decorations-project-grid"
-          />
-          <img
-            src={VideoDecor}
-            alt="decor"
-            className="decorations decorations-back decorations-project-video"
-          />
-          <img
-            src={LaptopDecor}
-            alt="decor"
-            className="decorations decorations-back decorations-project-laptop"
-          />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <Template>
+        <div className="projectpreviewpage-container">
+          <div className="projectpreviewpage-decorations">
+            <img
+              src={GridDecor}
+              alt="decor"
+              className="decorations decorations-back decorations-project-grid"
+            />
+            <img
+              src={VideoDecor}
+              alt="decor"
+              className="decorations decorations-back decorations-project-video"
+            />
+            <img
+              src={LaptopDecor}
+              alt="decor"
+              className="decorations decorations-back decorations-project-laptop"
+            />
+          </div>
+          {allProjects && (
+            <HorizontalScroll
+              reverseScroll={true}
+              config={{ stiffness: 60, damping: 10 }}
+              style={{ height: "calc(100vh - 140px)" }}
+            >
+              {allProjects.map((project, idx) => (
+                <Init delay={idx * 0.2}>
+                  <ProjectCard
+                    className="horizontal-scroll"
+                    src={project.previewImage.asset.url}
+                    tinySrc={project.loadingImage.asset.url}
+                    key={project.title}
+                    title={project.title}
+                    tags={project.tags}
+                    isComingSoon={project.isComingSoon}
+                    isOngoing={project.isOngoing}
+                    slug={project.slug.current}
+                  />
+                </Init>
+              ))}
+            </HorizontalScroll>
+          )}
         </div>
-        {allProjects && (
-          <HorizontalScroll
-            reverseScroll={true}
-            config={{ stiffness: 60, damping: 10 }}
-            style={{ height: "calc(100vh - 140px)" }}
-          >
-            {allProjects.map((project, idx) => (
-              <Init delay={idx * 0.2}>
-                <ProjectCard
-                  className="horizontal-scroll"
-                  src={project.previewImage.asset.url}
-                  tinySrc={project.loadingImage.asset.url}
-                  key={project.title}
-                  title={project.title}
-                  tags={project.tags}
-                  isComingSoon={project.isComingSoon}
-                  isOngoing={project.isOngoing}
-                  slug={project.slug.current}
-                />
-              </Init>
-            ))}
-          </HorizontalScroll>
-        )}
-      </div>
-    </Template>
+      </Template>
+    </motion.div>
   );
 };

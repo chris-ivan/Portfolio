@@ -17,6 +17,8 @@ import VideoDecor from "../images/decorations/video.svg";
 import LaptopDecor from "../images/png/laptop.png";
 import { Init } from "../components/Animations/Init";
 
+import { motion } from "framer-motion";
+
 export const ProjectPage = () => {
   const [projectData, setProjectData] = useState(null);
   const { id } = useParams();
@@ -131,53 +133,59 @@ export const ProjectPage = () => {
   };
 
   return (
-    <Template>
-      <div className="projectPage">
-        <div className="projectPage-decorations">
-          <img
-            src={GridDecor}
-            alt="decor"
-            className="decorations decorations-back decorations-project-grid"
-          />
-          <img
-            src={VideoDecor}
-            alt="decor"
-            className="decorations decorations-back decorations-project-video"
-          />
-          <img
-            src={LaptopDecor}
-            alt="decor"
-            className="decorations decorations-back decorations-project-laptop"
-          />
-        </div>
-        {projectData && (
-          <Init>
-            <div className="projectPage-content">
-              <Init>
-                <H2>{projectData.title}</H2>
-              </Init>
-              <Carousel data={projectData.carousel} />
-              <Init delay={0.2}>
-                <h3 className="projectPage-title">About this Project</h3>
-                <BlockContent blocks={projectData.body} />
-                <br className="Br" />
-              </Init>
-              <Init delay={0.4}>
-                <BadgeContainer
-                  title="Technologies"
-                  width="100%"
-                  badges={getTechArray()}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <Template>
+        <div className="projectPage">
+          <div className="projectPage-decorations">
+            <img
+              src={GridDecor}
+              alt="decor"
+              className="decorations decorations-back decorations-project-grid"
+            />
+            <img
+              src={VideoDecor}
+              alt="decor"
+              className="decorations decorations-back decorations-project-video"
+            />
+            <img
+              src={LaptopDecor}
+              alt="decor"
+              className="decorations decorations-back decorations-project-laptop"
+            />
+          </div>
+          {projectData && (
+            <Init>
+              <div className="projectPage-content">
+                <Init>
+                  <H2>{projectData.title}</H2>
+                </Init>
+                <Carousel data={projectData.carousel} />
+                <Init delay={0.2}>
+                  <h3 className="projectPage-title">About this Project</h3>
+                  <BlockContent blocks={projectData.body} />
+                  <br className="Br" />
+                </Init>
+                <Init delay={0.4}>
+                  <BadgeContainer
+                    title="Technologies"
+                    width="100%"
+                    badges={getTechArray()}
+                  />
+                </Init>
+                <BottomNavigation
+                  prevProject={getPrevProject()}
+                  nextProject={getNextProject()}
+                  links={getLinkArray()}
                 />
-              </Init>
-              <BottomNavigation
-                prevProject={getPrevProject()}
-                nextProject={getNextProject()}
-                links={getLinkArray()}
-              />
-            </div>
-          </Init>
-        )}
-      </div>
-    </Template>
+              </div>
+            </Init>
+          )}
+        </div>
+      </Template>
+    </motion.div>
   );
 };

@@ -1,6 +1,6 @@
 import "./App.scss";
 import AppRoute from "./routes/AppRoute";
-import { AnimatePresence } from "framer-motion";
+// import { AnimatePresence } from "framer-motion";
 import { routes } from "./routes/routes";
 import {
   // BrowserRouter as Router,
@@ -11,18 +11,18 @@ import {
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./pages/Template/_setup.scss";
-// import { Navbar } from "./components/Navbar/Navbar";
-// import { SocialMedia } from "./components/SocialMedia/SocialMedia";
+import { Navbar } from "./components/Navbar/Navbar";
+import { SocialMedia } from "./components/SocialMedia/SocialMedia";
 
 function App() {
   const location = useLocation();
   return (
     <div className="App">
       {/* <Router> */}
-      {/* <Navbar />
-      <SocialMedia /> */}
+      <Navbar />
+      <SocialMedia />
       {/* <AnimatePresence> */}
-      <Switch location={location} key={location.key}>
+      <Switch location={location} key={location.pathname}>
         {routes.map((route) => (
           <AppRoute
             exact
