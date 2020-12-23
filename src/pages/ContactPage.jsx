@@ -34,17 +34,26 @@ export const ContactPage = () => {
   const [content, setContent] = useState({ value: "", isValid: false });
   const [loading, setLoading] = useState(false);
 
-  const sendEmail = async (data) => {
-    try {
-      axios.post(emailUrl, data);
-    } catch (err) {
-      toast.dark(`Sorry! An error occurred, please try again :"`);
-    }
+  const sendEmail = (data) => {
+    setLoading(true);
+    axios
+      .post(emailUrl, data)
+      .then(() => {
+        toast.dark("Thank you! I will reply to you soon!");
+        setName({ value: "", isValid: false });
+        setEmail({ value: "", isValid: false });
+        setContent({ value: "", isValid: false });
+      })
+      .catch(() => {
+        toast.dark(`Sorry! An error occurred, please try again :"`);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
     const isContentValid = name.isValid && email.isValid && content.isValid;
     const data = {
       name: name.value,
@@ -55,13 +64,7 @@ export const ContactPage = () => {
       toast.dark("Oops! Please complete the form!");
     } else {
       await sendEmail(data);
-      toast.dark("Thank you! I will reply to you soon!");
-      // console.log(data);
-      setName({ value: "", isValid: false });
-      setEmail({ value: "", isValid: false });
-      setContent({ value: "", isValid: false });
     }
-    setLoading(false);
   };
 
   return (
