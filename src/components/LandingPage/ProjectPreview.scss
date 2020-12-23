@@ -51,6 +51,11 @@
 }
 
 .project-preview-screenshoot {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   @include setup_size(95vw, 85vh);
   // pointer-events: none;
   position: absolute;

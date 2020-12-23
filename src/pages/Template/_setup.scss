@@ -107,9 +107,11 @@ a {
     transition: $defaultTransition;
     &-semi-front {
       display: none;
-      // z-index: -1;
-      // @include set_glow(0);
-      // opacity: 0.2;
+      opacity: 0.5;
+    }
+    &-back {
+      z-index: -1;
+      opacity: 0.5;
     }
   }
   .code-heading {

@@ -33,5 +33,6 @@
   }
   .decorations-trivia-laptop {
     @include setup_decor(auto, auto, 0, -15%, 90%, auto);
+    opacity: 0.25;
   }
 }

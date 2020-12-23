@@ -10,7 +10,7 @@ import { Init } from "../Animations/Init";
 import { useTransform, Frame } from "framer";
 import { motion } from "framer-motion";
 
-export const HelloWorld = ({ pageY }) => {
+export const HelloWorld = ({ pageY, handleResize }) => {
   const shardY = useTransform(pageY, (value) => value / 1.5);
   return (
     <div className="hello-world">
@@ -55,6 +55,14 @@ export const HelloWorld = ({ pageY }) => {
           drag={true}
           dragConstraints={{ left: -50, top: -50, right: 50, bottom: 50 }}
           dragElastic={0.5}
+          onDrag={() => {
+            handleResize(false);
+          }}
+          onDragEnd={() => {
+            setTimeout(() => {
+              handleResize(true);
+            }, 200);
+          }}
         >
           <Init delay={0.4}>
             <Image

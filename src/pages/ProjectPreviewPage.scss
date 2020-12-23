@@ -15,9 +15,14 @@
   scrollbar-width: none;
 }
 
-// .scroll-horizontal {
-//   overflow-y: visible !important;
-// }
+.scroll-horizontal {
+  overflow-x: scroll !important;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
 
 .projectpreviewpage-decorations {
   @include setup_size(100%, 120%);
