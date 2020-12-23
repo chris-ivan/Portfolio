@@ -150,7 +150,7 @@ export const ProjectPreviewPage = () => {
               style={{ height: "calc(100vh - 140px)" }}
             >
               {allProjects.map((project, idx) => (
-                <Init delay={idx * 0.2} key={idx}>
+                <Init delay={idx * 0.2} key={idx} disabledView>
                   <ProjectCard
                     className="horizontal-scroll"
                     src={project.previewImage.asset.url}

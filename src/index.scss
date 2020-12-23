@@ -31,6 +31,8 @@
 
 html {
   background-color: $black;
+  height: calc(100%-70px);
+  // overflow: hidden;
 }
 
 body {

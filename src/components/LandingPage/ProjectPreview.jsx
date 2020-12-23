@@ -86,8 +86,6 @@ export const ProjectPreview = ({
             className="project-preview-screenshoot-phone"
             alt="phone"
           />
-        </Init>
-        <Init delay={0.8}>
           <motion.img
             drag
             dragConstraints={{ left: -35, top: -35, right: 35, bottom: 35 }}

@@ -104,6 +104,7 @@ a {
 
 @media screen and (max-width: $breakpoint-small) {
   .decorations {
+    transition: $defaultTransition;
     &-semi-front {
       display: none;
       // z-index: -1;

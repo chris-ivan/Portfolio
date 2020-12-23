@@ -8,7 +8,6 @@
   display: flex;
   position: relative;
   overflow-x: hidden;
-  overflow-y: visible !important;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -16,9 +15,9 @@
   scrollbar-width: none;
 }
 
-.scroll-horizontal {
-  overflow-y: visible !important;
-}
+// .scroll-horizontal {
+//   overflow-y: visible !important;
+// }
 
 .projectpreviewpage-decorations {
   @include setup_size(100%, 120%);

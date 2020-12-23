@@ -5,6 +5,7 @@ import { ReactComponent as LinkedIn } from "../../images/icons/LinkedIn.svg";
 import { ReactComponent as Github } from "../../images/icons/Github.svg";
 import { ReactComponent as Instagram } from "../../images/icons/Instagram.svg";
 import { ReactComponent as Line } from "../../images/icons/Line.svg";
+import { SocialMediaIcon } from "./SocialMediaIcon";
 
 const socialMediaData = [
   {
@@ -33,16 +34,12 @@ export const SocialMedia = () => {
   return (
     <div className="social-media-container">
       {socialMediaData.map((socmed) => (
-        <a
-          href={socmed.url}
+        <SocialMediaIcon
+          url={socmed.url}
           key={socmed.alt}
-          className="social-media-icon-container"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {/* <img src={socmed.icon} alt={socmed.alt} /> */}
-          <socmed.Icon alt={socmed.alt} />
-        </a>
+          alt={socmed.alt}
+          component={socmed.Icon}
+        />
       ))}
     </div>
   );

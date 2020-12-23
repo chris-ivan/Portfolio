@@ -1,0 +1,45 @@
+@import "../../pages/Template/variables";
+@import "../../pages/Template/mixin";
+.social-media-icon-container {
+  padding: 7px 2px;
+  @include setup_size(44px, 54px);
+  @include flex_center(column);
+  position: relative;
+  .social-media-icon {
+    @include flex_center(column);
+    @include setup_size(100%, 100%);
+    position: relative;
+    &-move {
+      position: absolute;
+      @include flex_center(column);
+    }
+  }
+  svg,
+  path {
+    transition: $defaultTransition;
+  }
+  transition: $defaultTransition;
+  &:hover {
+    transform: translateY(-2px);
+    svg,
+    path {
+      fill: $lightBlue;
+      filter: drop-shadow(0 0 5px rgba(86, 204, 242, 0.25));
+    }
+  }
+  svg {
+    transform: scale(0.8);
+    @include setup_size(30px, 30px);
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .social-media-icon-container {
+    padding: 2px;
+    @include setup_size(30px, 40px);
+    svg {
+      transform: scale(0.6);
+      @include setup_size(30px, 30px);
+    }
+  }
+}

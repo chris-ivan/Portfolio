@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useTransform, Frame } from "framer";
 import "./Main.scss";
@@ -22,8 +22,21 @@ export const Main = ({ pageY }) => {
   const bubbleY = useTransform(pageY, (value) => value / -5);
   const profileY = useTransform(pageY, (value) => value / 6);
   const loveY = useTransform(pageY, (value) => value / 3);
+
+  const [cursor, setCursor] = useState({ x: 0, y: 0 });
+  const handleCursor = (e) => {
+    setCursor({
+      x: e.clientX,
+      y: e.clientY,
+    });
+  };
+
   return (
-    <div className="main-container">
+    <div
+      className="main-container"
+      onMouseEnter={handleCursor}
+      onMouseMove={handleCursor}
+    >
       <div className="landing-page-main-decorations">
         <Frame
           background={""}
@@ -89,23 +102,30 @@ export const Main = ({ pageY }) => {
         </Init>
       </div>
       <div className="landing-main-image-container">
-        <motion.div
-          drag={true}
-          dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
-          dragElastic={0.7}
-          className="landing-main-image-inner-container"
+        <div
+          className="landing-page-image-outer-container"
+          style={{
+            transform: `translate(${cursor.x / 50}px, ${cursor.y / 50}px)`,
+          }}
         >
-          <Init delay={0.5}>
-            <Image
-              src={Photo}
-              tinySrc={TinyPhoto}
-              alt="main profile pic"
-              rotate
-              shadow
-              progressive
-            />
-          </Init>
-        </motion.div>
+          <motion.div
+            drag={true}
+            dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
+            dragElastic={0.7}
+            className="landing-main-image-inner-container"
+          >
+            <Init delay={0.5}>
+              <Image
+                src={Photo}
+                tinySrc={TinyPhoto}
+                alt="main profile pic"
+                rotate
+                shadow
+                progressive
+              />
+            </Init>
+          </motion.div>
+        </div>
       </div>
       <div className="landing-page-main-decorations">
         <Frame
@@ -116,18 +136,25 @@ export const Main = ({ pageY }) => {
           top="-10%"
           y={profileY}
         >
-          <motion.img
+          <img
             drag
             src={ProfileDecor}
             alt="decor"
             className="decorations decorations-semi-front decorations-profile"
-            style={{ height: "20vh", maxHeight: "100px" }}
+            style={{
+              height: "20vh",
+              maxHeight: "100px",
+              transform: `translate(${cursor.x / -35}px, ${cursor.y / -35}px)`,
+            }}
           />
         </Frame>
         <img
           src={AvatarDecor}
           alt="decor"
           className="decorations decorations-front decorations-avatar"
+          style={{
+            transform: `translate(${cursor.x / 20}px, ${cursor.y / -20}px)`,
+          }}
         />
         <Frame
           background={""}
@@ -141,7 +168,11 @@ export const Main = ({ pageY }) => {
             src={LoveDecor}
             alt="decor"
             className="decorations decorations-front decorations-love"
-            style={{ width: "20vw", maxWidth: "100px" }}
+            style={{
+              width: "20vw",
+              maxWidth: "100px",
+              transform: `translate(${cursor.x / 40}px, ${cursor.y / 40}px)`,
+            }}
           />
         </Frame>
       </div>

@@ -77,6 +77,7 @@ export const ContactPage = () => {
               src={GridDecor}
               alt="decor"
               className="decorations decorations-back decorations-contact-grid"
+              // style={{ width: "30vw", maxWidth: "300px" }}
             />
             <img
               src={VideoDecor}

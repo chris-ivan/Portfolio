@@ -9,6 +9,7 @@
   margin: 0 5px;
   position: relative;
   transition: $defaultTransition;
+  overflow: hidden;
   &:hover {
     cursor: pointer;
     background: $darkBlue;
@@ -19,7 +20,7 @@
     }
   }
   &-image {
-    @include setup_size(100%, 85%);
+    @include setup_size(100%, 80%);
     overflow: hidden;
     position: relative;
     &::after {
@@ -35,6 +36,8 @@
     }
   }
   &-info {
+    @include setup_size(100%, 20%);
+    background: $lighterBlack;
     padding: 15px;
     p {
       color: $lightBlue;
@@ -42,6 +45,7 @@
     }
     &-tags {
       display: flex;
+      flex-wrap: wrap;
 
       & > * {
         color: $white;
@@ -82,7 +86,8 @@
 @media screen and (max-width: $breakpoint-medium) {
   .projectCard {
     top: 3vh;
-    @include setup_size(60vw, 80vh);
+    @include setup_size(60vw, 100%);
+    max-height: 80vh;
   }
 }
 
