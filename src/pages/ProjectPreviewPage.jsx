@@ -126,23 +126,6 @@ export const ProjectPreviewPage = () => {
     >
       <Template>
         <div className="projectpreviewpage-container">
-          <div className="projectpreviewpage-decorations">
-            <img
-              src={GridDecor}
-              alt="decor"
-              className="decorations decorations-back decorations-project-grid"
-            />
-            <img
-              src={VideoDecor}
-              alt="decor"
-              className="decorations decorations-back decorations-project-video"
-            />
-            <img
-              src={LaptopDecor}
-              alt="decor"
-              className="decorations decorations-back decorations-project-laptop"
-            />
-          </div>
           {allProjects && (
             <HorizontalScroll
               reverseScroll={true}
@@ -166,6 +149,23 @@ export const ProjectPreviewPage = () => {
               ))}
             </HorizontalScroll>
           )}
+        </div>
+        <div className="projectpreviewpage-decorations">
+          <img
+            src={GridDecor}
+            alt="decor"
+            className="decorations decorations-back decorations-project-grid"
+          />
+          <img
+            src={VideoDecor}
+            alt="decor"
+            className="decorations decorations-back decorations-project-video"
+          />
+          <img
+            src={LaptopDecor}
+            alt="decor"
+            className="decorations decorations-back decorations-project-laptop"
+          />
         </div>
       </Template>
     </motion.div>
