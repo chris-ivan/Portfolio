@@ -5,14 +5,16 @@
   @include setup_size(25vw, 100%);
   border: 1px solid $lighterBlackTransparent;
   box-shadow: $shadowDark;
-  background: $lighterBlack;
+  background: $lighterBlackTransparent;
   margin: 0 5px;
   position: relative;
   transition: $defaultTransition;
   overflow: hidden;
+  backdrop-filter: blur(7.5px);
+  z-index: 50;
   &:hover {
     cursor: pointer;
-    background: $darkBlue;
+    // background: $darkBlue;
     border: 1px solid $blue;
     img {
       filter: hue-rotate(90deg) contrast(130%) sepia(30%);
@@ -37,7 +39,7 @@
   }
   &-info {
     @include setup_size(100%, 20%);
-    background: $lighterBlack;
+    // background: $lighterBlack;
     padding: 15px;
     p {
       color: $lightBlue;
