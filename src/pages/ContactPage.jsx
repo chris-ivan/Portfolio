@@ -14,7 +14,7 @@ import { Init } from "../components/Animations/Init";
 
 import { motion } from "framer-motion";
 
-const emailUrl = "http://localhost:5000/mail/sendEmail";
+const emailUrl = "https://chris-ivan-portfolio.herokuapp.com/mail/sendEmail";
 
 const text = (
   <p>
@@ -36,6 +36,9 @@ export const ContactPage = () => {
 
   const sendEmail = (data) => {
     setLoading(true);
+    toast.dark(
+      "Hello there! Right now, this website is hosted using free services due to budget issues, so please do expect delay. Thanks!"
+    );
     axios
       .post(emailUrl, data)
       .then(() => {
