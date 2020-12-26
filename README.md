@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+<h1 align="center">Hi, I'm Christopher Ivan Gunardi <img src="https://raw.githubusercontent.com/aemmadi/aemmadi/master/wave.gif" width="30px"></h1>
+<h3 align="center">Telecommunication Engineering Student | Fullstack Web Development and UI/UX Design Enthusiast</h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+While I am not pursuing a degree in Computer Science or Art, I am experienced in Frontend Web Development and UI/UX and have worked on several projects in these two fields. I enjoy creating websites with React and MERN Stack. I am also comfortable with using Adobe Photoshop and Figma to create professional UI/UX Designs.
 
-## Available Scripts
+<h3>Contacts</h3>
+<a href="https://chris-ivan.studio/"><img src="https://img.shields.io/badge/-chris--ivan.studio-0F1A2D?style=flat-square&logo=Pinboard&logoColor=56ccf2/"></a> 
+<a href="https://www.linkedin.com/in/christopher-ivan-gunardi/"><img src="https://img.shields.io/badge/-christopher--ivan-blue?style=flat-square&logo=Linkedin&logoColor=white/"></a> 
+<a href="https://instagram.com/christopher.01__"><img src="https://img.shields.io/badge/-christopher.01____-333333?style=flat-square&logo=instagram&logoColor=white/"> 
+<a href="mailto: gunardi.ivan@gmail.com"><img src="https://img.shields.io/badge/-gunardi.ivan@gmail.com-f6f6f6?style=flat-square&logo=Gmail&logoColor=white/"></a>
+<a href="https://timeline.line.me/user/_dfJ0BxfPlCiYEE7FlI4oE9-Sy0MJxehOj7lBsY0"><img src="https://img.shields.io/badge/-christopher__ivan01-00c300?style=flat&logo=LINE&logoColor=white"></a>
+  
+<h3>⚡ Technologies</h3>
+<p>
+<img src="https://img.shields.io/badge/-JavaScript-333333?style=flat-square&logo=javascript">
+<img src="https://img.shields.io/badge/-Nodejs-333333?style=flat-square&logo=Node.js">
+<img src="https://img.shields.io/badge/-Python-333333?style=flat-square&logo=Python">
+<img src="https://img.shields.io/badge/-React-333333?style=flat-square&logo=react">
+<img src="https://img.shields.io/badge/-HTML5-333333?style=flat-square&logo=html5">
+<img src="https://img.shields.io/badge/-CSS3-333333?style=flat-square&logo=css3">
+<img src="https://img.shields.io/badge/-Bootstrap-333333?style=flat-square&logo=bootstrap">
+<img src="https://img.shields.io/badge/-MongoDB-333333?style=flat-square&logo=mongodb">
+<img src="https://img.shields.io/badge/-Git-333333?style=flat-square&logo=git">
+<img src="https://img.shields.io/badge/-Netlify-333333?style=flat-square&logo=netlify">
+<img src="https://img.shields.io/badge/-Photoshop-333333?style=flat-square&logo=adobe-photoshop">
+<img src="https://img.shields.io/badge/-Affinity Designer-333333?style=flat-square&logo=affinity-designer">
+<img src="https://img.shields.io/badge/-Figma-333333?style=flat-square&logo=figma">
+<br>📘 To-Learn-List: Django, NextJS</p>
 
-In the project directory, you can run:
+<h3>🔥 Current Projects</h3>
+<ul>
+  <li><h4><a href="http://www.akumasukitb.com/">🚀 Aku Masuk ITB 2021</a></h4>
+    <p>A website project for an annual campus event "Aku Masuk ITB (AMI)"</p>
+  </li>
+  <li><h4><a href="http://www.milezeroproject.com/">📰 MileZero Project</a></h4>
+    <p>Upcoming IEEE ITB Student Branch event in collaboration with Microsoft and Schneider</p>
+</ul>
 
-### `npm start`
+<h3>👀 Latest (Mini) Projects</h3>
+<ul>
+  <li><h4><a href="http://insanemath.site/">➗ Insane Math</a></h4>
+    <p>A website project created to help students from Elementary to Senior High School learn math through a math quiz game.<br>Tags: React, PHP, Bootstrap, Math</p>
+  </li>
+  <li><h4><a href="http://bit.ly/BibtyLuxuryRent">💰 Bibty Luxury Renting</a></h4>
+    <p>Bibty is created to enable people share their luxurious goods with a renting system. The goal to help people from middle-class to rent prestigious items they cannot afford by renting the item temporarily.<br>Tags: UI/UX, Figma, Adobe Photoshop</p>
+  </li>
+    <li><h4><a href="https://nervous-spence-8fbc52.netlify.app/">💬 PPAB UKT Private Chatroom</a></h4>
+    <p>A simple chatroom website.<br>Tags: React, Socket.io, Netlify</p>
+  </li>
+</ul>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Github Stats](https://github-readme-stats.vercel.app/api?username=chris-ivan&count_private=true&theme=react&show_icons=true&include_all_commits=true)
