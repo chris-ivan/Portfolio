@@ -23,7 +23,7 @@
 }
 
 .decorations-trivia-laptop {
-  @include setup_decor(auto, auto, -30%, -15%, auto, 100%);
+  @include setup_decor(auto, auto, -30%, -15%, 40%, auto);
   transform: scaleX(-1);
 }
 

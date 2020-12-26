@@ -55,7 +55,7 @@ export const MoreAboutMe = ({ pageY }) => {
         background={""}
         width="100%"
         height="100%"
-        right="-50%"
+        right="-40%"
         top="-10%"
         y={gridY}
       >

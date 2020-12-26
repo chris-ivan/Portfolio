@@ -42,22 +42,22 @@ const favourites = [
 ];
 
 export const Favourites = ({ pageY }) => {
-  const laptopY = useTransform(pageY, (value) => value / 4);
+  const laptopY = useTransform(pageY, (value) => value / 3);
   return (
     <div className="favourites-container">
       <Frame
         background={""}
         width="100%"
         height="100%"
-        left="0%"
-        top="35vh"
+        left="10%"
+        top="50vh"
         y={laptopY}
       >
         <img
           src={Laptop}
           alt="decor-again"
           className="decorations decorations-back decorations-trivia-laptop"
-          style={{ width: "60vw" }}
+          style={{ width: "40vw" }}
         />
       </Frame>
       <Init>

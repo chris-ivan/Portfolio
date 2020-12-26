@@ -25,17 +25,15 @@
   }
   .landing-main-image-inner-container {
     @include setup_size(100%, 100%);
-    cursor: grab;
+    animation: main-image 3s ease-in-out infinite;
+    transition: $defaultTransition;
     img {
       transition: $defaultTransition;
     }
-    &:active {
-      cursor: grabbing;
-    }
     &:hover {
       img {
-        transform: scale(1.02);
-        filter: contrast(103%);
+        transform: scale(1.03);
+        filter: contrast(105%);
       }
     }
   }
@@ -89,6 +87,18 @@
   }
   100% {
     opacity: 0.2;
+    transform: translateY(0);
+  }
+}
+
+@keyframes main-image {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
     transform: translateY(0);
   }
 }

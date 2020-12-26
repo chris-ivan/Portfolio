@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { useTransform, Frame } from "framer";
 import "./Main.scss";
 
@@ -24,18 +23,42 @@ export const Main = ({ pageY }) => {
   const loveY = useTransform(pageY, (value) => value / 3);
 
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
+  const [initialCursor, setInitialCursor] = useState({
+    x: 0,
+    y: 0,
+    acceptCursor: false,
+  });
+
   const handleCursor = (e) => {
-    setCursor({
+    initialCursor.acceptCursor &&
+      setCursor({
+        x: initialCursor.x - e.clientX,
+        y: initialCursor.y - e.clientY,
+      });
+  };
+
+  const handleCursorEnter = (e) => {
+    setInitialCursor({
       x: e.clientX,
       y: e.clientY,
+      acceptCursor: true,
+    });
+  };
+
+  const handleCursorLeave = (e) => {
+    setInitialCursor({
+      x: e.clientX,
+      y: e.clientY,
+      acceptCursor: false,
     });
   };
 
   return (
     <div
       className="main-container"
-      onMouseEnter={handleCursor}
+      onMouseEnter={handleCursorEnter}
       onMouseMove={handleCursor}
+      onMouseLeave={handleCursorLeave}
     >
       <div className="landing-page-main-decorations">
         <Frame
@@ -108,12 +131,7 @@ export const Main = ({ pageY }) => {
             transform: `translate(${cursor.x / 50}px, ${cursor.y / 50}px)`,
           }}
         >
-          <motion.div
-            drag
-            dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
-            dragElastic={0.7}
-            className="landing-main-image-inner-container"
-          >
+          <div className="landing-main-image-inner-container">
             <Init delay={0.5}>
               <Image
                 src={Photo}
@@ -124,7 +142,7 @@ export const Main = ({ pageY }) => {
                 progressive
               />
             </Init>
-          </motion.div>
+          </div>
         </div>
       </div>
       <div className="landing-page-main-decorations">
@@ -136,8 +154,7 @@ export const Main = ({ pageY }) => {
           top="-10%"
           y={profileY}
         >
-          <motion.img
-            drag
+          <img
             src={ProfileDecor}
             alt="decor"
             className="decorations decorations-semi-front decorations-profile"
@@ -171,7 +188,7 @@ export const Main = ({ pageY }) => {
             style={{
               width: "20vw",
               maxWidth: "100px",
-              transform: `translate(${cursor.x / 40}px, ${cursor.y / 40}px)`,
+              transform: `translate(${cursor.x / 35}px, ${cursor.y / 20}px)`,
             }}
           />
         </Frame>

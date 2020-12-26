@@ -14,7 +14,7 @@
   z-index: 50;
   &:hover {
     cursor: pointer;
-    // background: $darkBlue;
+    background: $darkBlueTransparent;
     border: 1px solid $blue;
     img {
       filter: hue-rotate(90deg) contrast(130%) sepia(30%);

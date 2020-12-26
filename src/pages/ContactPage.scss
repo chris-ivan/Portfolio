@@ -6,6 +6,7 @@
   @include flex_center(column);
   &-container {
     margin-top: 5vh;
+    z-index: 2;
     @include setup_size(80%, auto);
     max-width: $content-max-width;
   }
@@ -29,6 +30,7 @@
 .contact-decorations {
   @include setup_size(100%, 100%);
   pointer-events: none;
+  z-index: 1;
   position: absolute;
   overflow: hidden;
   .decorations-contact {

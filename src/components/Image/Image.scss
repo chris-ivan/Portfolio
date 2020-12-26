@@ -12,6 +12,7 @@
   overflow: hidden;
   //   position: absolute;
   //   top: 0;
+  z-index: 2;
   margin: 0 auto;
 }
 
@@ -22,7 +23,6 @@
   filter: none;
   transition: none;
   top: 0;
-  z-index: 2;
   transition: filter 0.5s ease-out;
   overflow: hidden;
   &-rotate {
@@ -39,7 +39,9 @@
 .image-shadow {
   @include setup_size(100%, 105%);
   background: $photoGradient;
+  backdrop-filter: blur(20px);
   position: absolute;
+  z-index: 1;
   top: 0;
   &-rotate {
     transform: rotate(-1.5deg) translate(0.5vw, 2vh);
