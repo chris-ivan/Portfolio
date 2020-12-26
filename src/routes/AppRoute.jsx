@@ -1,11 +1,10 @@
 import React, { Suspense } from "react";
 import { Route } from "react-router-dom";
 
-const AppRoute = ({ component: Component, path, history }) => {
+const AppRoute = ({ component: Component, path }) => {
   return (
     <Route
       path={path}
-      history={history}
       render={(props) => (
         <Suspense fallback={""}>
           <Component {...props} />
