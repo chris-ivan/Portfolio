@@ -7,9 +7,12 @@
   margin: 20vh 0 12vh;
   &-desc {
     @include setup_size(40%, 100%);
+    position: relative;
+    z-index: 3;
   }
   &-image {
     @include setup_size(25%, 100%);
+    z-index: 1;
     margin-left: 5vw;
     cursor: grab;
     user-select: none !important;

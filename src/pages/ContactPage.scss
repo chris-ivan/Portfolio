@@ -92,6 +92,10 @@
     .decorations-contact {
       &-video {
         @include setup_decor(50vh, -15%, auto, auto, 50%, auto);
+        opacity: 0.3;
+      }
+      &-grid {
+        opacity: 0.1;
       }
     }
   }

@@ -131,7 +131,7 @@
   .project-preview-screenshoot {
     @include setup_size(100vw, 85vh);
     position: absolute;
-    pointer-events: none;
+    // pointer-events: none;
     & > * {
       position: absolute;
     }

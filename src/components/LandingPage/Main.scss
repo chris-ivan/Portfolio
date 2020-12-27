@@ -187,11 +187,11 @@
     }
     &-image {
       @include setup_decor(auto, -10%, 50%, auto, auto, 20%);
-      opacity: 0.15;
+      opacity: 0.25;
     }
     &-bubble {
       @include setup_decor(15%, auto, auto, -2%, 20%, auto);
-      opacity: 0.15;
+      opacity: 0.25;
     }
   }
 

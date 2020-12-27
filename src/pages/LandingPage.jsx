@@ -51,7 +51,7 @@ export const LandingPage = () => {
         <Template>
           <Main pageY={y} />
           <TechStack pageY={y} />
-          <LatestProjects />
+          <LatestProjects handleResize={setisMobile} />
           <DoubleButton
             label1="All Projects"
             link1="/project"
