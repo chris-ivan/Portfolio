@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 import "./ContactPage.scss";
+
 import { Button } from "../components/Button/Button";
 import { Input } from "../components/ContactPage/Input";
 import { H2 } from "../components/Heading/Heading";
 import { Template } from "./Template/Template";
+import { CONTACT_ACTION, sendAnalyticsAction } from "../shared/AnalyticActions";
 
 import GridDecor from "../images/decorations/grid.svg";
 import VideoDecor from "../images/decorations/video.svg";
 import LaptopDecor from "../images/png/laptop.png";
 import { Init } from "../components/Animations/Init";
-
-import { motion } from "framer-motion";
 
 const emailUrl = "https://chris-ivan-portfolio.herokuapp.com/mail/sendEmail";
 
@@ -39,6 +40,7 @@ export const ContactPage = () => {
     toast.dark(
       "Hello there! Right now, this website is hosted using free services due to budget issues, so please do expect delay. Thanks!"
     );
+    sendAnalyticsAction(CONTACT_ACTION, "Sending a valid email");
     axios
       .post(emailUrl, data)
       .then(() => {
@@ -49,6 +51,7 @@ export const ContactPage = () => {
       })
       .catch(() => {
         toast.dark(`Sorry! An error occurred, please try again :"`);
+        sendAnalyticsAction(CONTACT_ACTION, "Email not delivered");
       })
       .finally(() => {
         setLoading(false);
@@ -57,6 +60,7 @@ export const ContactPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    sendAnalyticsAction(CONTACT_ACTION, "Clicked the CTA");
     const isContentValid = name.isValid && email.isValid && content.isValid;
     const data = {
       name: name.value,

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-export const Init = ({ children, delay, disabledView }) => {
+export const Init = ({ children, delay = 0, disabledView }) => {
   const animation = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.05 });
   useEffect(() => {

@@ -1,14 +1,19 @@
 import React from "react";
+import { motion } from "framer-motion";
+import {
+  EASTER_EGG_ACTION,
+  sendAnalyticsAction,
+} from "../../shared/AnalyticActions";
+import "./ProjectPreview.scss";
+
 import { Button } from "../Button/Button";
 import { Image } from "../Image/Image";
-import "./ProjectPreview.scss";
+import { Init } from "../Animations/Init";
 
 import { ReactComponent as Web } from "../../images/icons/Web.svg";
 import { ReactComponent as Github } from "../../images/icons/Github.svg";
 import { ReactComponent as Figma } from "../../images/icons/Figma.svg";
 import { ReactComponent as RightArrow } from "../../images/icons/RightArrow.svg";
-import { Init } from "../Animations/Init";
-import { motion } from "framer-motion";
 
 export const ProjectPreview = ({
   src,
@@ -39,6 +44,10 @@ export const ProjectPreview = ({
                 handleResize(false);
               }}
               onDragEnd={() => {
+                sendAnalyticsAction(
+                  EASTER_EGG_ACTION,
+                  "Dragging mobile screenshoot"
+                );
                 setTimeout(() => {
                   handleResize(true);
                 }, 200);
@@ -55,6 +64,10 @@ export const ProjectPreview = ({
                 handleResize(false);
               }}
               onDragEnd={() => {
+                sendAnalyticsAction(
+                  EASTER_EGG_ACTION,
+                  "Dragging desktop screenshoot"
+                );
                 setTimeout(() => {
                   handleResize(true);
                 }, 200);
