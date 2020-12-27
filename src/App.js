@@ -28,7 +28,8 @@ function App() {
   // });
 
   useEffect(() => {
-    ReactGA.initialize("UA-186027151-2");
+    // ReactGA.initialize("UA-186027151-2"); 18119025
+    ReactGA.initialize("UA-186117870-1"); // main
     ReactGA.pageview(window.location.pathname + window.location.search);
   });
 
