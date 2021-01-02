@@ -27,6 +27,9 @@ import { ReactComponent as JS } from "./JS.svg";
 import { ReactComponent as Medium } from "./Medium.svg";
 import { ReactComponent as HTML } from "./HTML.svg";
 import { ReactComponent as CSS } from "./CSS.svg";
+import { ReactComponent as Framer } from "./Framer.svg";
+import { ReactComponent as Sanity } from "./Sanity.svg";
+import { ReactComponent as Analytics } from "./Analytics.svg";
 
 export const badgeIcon = {
   SOCIAL_WEB: Web,
@@ -60,4 +63,7 @@ export const badgeIcon = {
   TECH_JS: JS,
   TECH_HTML: HTML,
   TECH_CSS: CSS,
+  TECH_SANITY: Sanity,
+  TECH_FRAMER: Framer,
+  TECH_ANALYTICS: Analytics,
 };
