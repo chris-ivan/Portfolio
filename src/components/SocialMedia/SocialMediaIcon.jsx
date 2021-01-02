@@ -1,7 +1,11 @@
 import React from "react";
+import {
+  SOCIAL_MEDIA_ACTION,
+  sendAnalyticsAction,
+} from "../../shared/AnalyticActions";
 import "./SocialMediaIcon.scss";
 
-export const SocialMediaIcon = ({ url, alt, component: Component }) => {
+export const SocialMediaIcon = ({ url, alt, component: Component, label }) => {
   // const [cursor, setCursor] = React.useState({ x: 0, y: 0 });
 
   // const handleCursor = (e) => {
@@ -12,14 +16,21 @@ export const SocialMediaIcon = ({ url, alt, component: Component }) => {
   // };
 
   return (
-    <a
-      href={url}
+    <div
       className="social-media-icon-container"
-      target="_blank"
-      rel="noopener noreferrer"
-      // onMouseMove={handleCursor}
+      onClick={() => {
+        sendAnalyticsAction(
+          SOCIAL_MEDIA_ACTION,
+          `Opening social media: ${label}`
+        );
+      }}
     >
-      <div className="social-media-icon">
+      <a
+        href={url}
+        className="social-media-icon"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <div
           className="social-media-icon-move"
           // style={{
@@ -28,7 +39,7 @@ export const SocialMediaIcon = ({ url, alt, component: Component }) => {
         >
           <Component alt={alt} />
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
   );
 };

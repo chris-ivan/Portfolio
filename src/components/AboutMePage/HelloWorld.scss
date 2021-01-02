@@ -7,10 +7,14 @@
   margin: 20vh 0 12vh;
   &-desc {
     @include setup_size(40%, 100%);
+    position: relative;
+    z-index: 3;
   }
   &-image {
     @include setup_size(25%, 100%);
+    z-index: 1;
     margin-left: 5vw;
+    position: relative;
     cursor: grab;
     user-select: none !important;
     -moz-user-select: none !important;
@@ -29,6 +33,14 @@
       transition: $defaultTransition;
     }
   }
+}
+
+.hello-world-image-hidden-button {
+  @include setup_size(100%, 100%);
+  @include flex_center(row);
+  top: 0;
+  left: 0;
+  position: absolute;
 }
 
 .decorations-hello-shard {

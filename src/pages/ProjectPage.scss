@@ -92,4 +92,17 @@
       font-size: large;
     }
   }
+  .projectPage-decorations {
+    .decorations-project {
+      &-grid {
+        opacity: 0.12;
+      }
+      &-video {
+        opacity: 0.25;
+      }
+      &-laptop {
+        opacity: 0.8;
+      }
+    }
+  }
 }

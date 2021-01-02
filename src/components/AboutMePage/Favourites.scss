@@ -22,9 +22,15 @@
   }
 }
 
+.favourites-table {
+  position: relative;
+  z-index: 2;
+}
+
 .decorations-trivia-laptop {
   @include setup_decor(auto, auto, -30%, -15%, 40%, auto);
   transform: scaleX(-1);
+  opacity: 0.4;
 }
 
 @media screen and (max-width: $breakpoint-small) {
@@ -33,6 +39,6 @@
   }
   .decorations-trivia-laptop {
     @include setup_decor(auto, auto, 0, -15%, 90%, auto);
-    opacity: 0.25;
+    opacity: 0.5;
   }
 }

@@ -9,21 +9,25 @@ import { SocialMediaIcon } from "./SocialMediaIcon";
 
 const socialMediaData = [
   {
+    label: "Linkedin",
     alt: "Linkedin-logo",
     Icon: LinkedIn,
     url: "https://www.linkedin.com/in/christopher-ivan-gunardi",
   },
   {
+    label: "Github",
     alt: "Github-logo",
     Icon: Github,
     url: "https://github.com/Chris-Ivan/",
   },
   {
+    label: "Instagram",
     alt: "Instagram-logo",
     Icon: Instagram,
     url: "https://instagram.com/christopher.01__",
   },
   {
+    label: "Line",
     alt: "Line-logo",
     Icon: Line,
     url:
@@ -39,6 +43,7 @@ export const SocialMedia = () => {
           key={socmed.alt}
           alt={socmed.alt}
           component={socmed.Icon}
+          label={socmed.label}
         />
       ))}
     </div>
