@@ -1,5 +1,5 @@
 <h1>Portfolio Website</h1>
-<a href="https://chris-ivan.studio"><h3>www.chris-ivan.studio</h3></a>
+<h3><a href="https://chris-ivan.studio">www.chris-ivan.studio</a></h3>
 
 As someone interested in both Web Development and UI/UX, I think having a personal portfolio website is crucial. This website can also be used to show my skillset in front of prospective clients. When developing this website, I want to create a cool-looking website with some fancy animations, which I implemented using Framer Motion. I also learned how to use Sanity.io CMS to manage my project contents and Google Analytics to analyze visitor behaviors.
 
