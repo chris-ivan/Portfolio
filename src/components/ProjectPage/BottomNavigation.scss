@@ -17,6 +17,7 @@
     transform: translateY(2px);
     @include flex_center(row);
     z-index: 20;
+    position: relative;
     & > * {
       margin: 0 2px;
     }
@@ -54,7 +55,7 @@
 
 @media screen and (max-width: $breakpoint-medium) {
   .bottom-navigation {
-    margin: 2vh 0 8vh;
+    margin: 2vh 0 10vh;
     @include flex_center(column);
     &-center {
       transform: translateY(0);
