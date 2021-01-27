@@ -15,7 +15,7 @@ import VideoDecor from "../images/decorations/video.svg";
 import LaptopDecor from "../images/png/laptop.png";
 import { Init } from "../components/Animations/Init";
 
-const emailUrl = "https://chris-ivan-portfolio.herokuapp.com/mail/sendEmail";
+const emailUrl = "http://localhost:5000/mail/sendEmail";
 
 const text = (
   <p>
@@ -37,9 +37,6 @@ export const ContactPage = () => {
 
   const sendEmail = (data) => {
     setLoading(true);
-    toast.dark(
-      "Hello there! Right now, this website is hosted using free services due to budget issues, so please do expect delay. Thanks!"
-    );
     sendAnalyticsAction(CONTACT_ACTION, "Sending a valid email");
     axios
       .post(emailUrl, data)
