@@ -33,7 +33,7 @@ export const ProjectPage = () => {
   			carousel[]{asset->{url}},
   			body,
 				"tech": *[ _type == "badge" && _id in ^.technologies[]._ref ]{
-          // icon{asset->{url}},
+          icon{asset->{url}},
           name,
   				label
 				},
@@ -70,7 +70,8 @@ export const ProjectPage = () => {
     projectData &&
       projectData.tech.forEach((tech) => {
         let temp = {
-          component: badgeIcon[tech.name],
+          // component: badgeIcon[tech.name],
+          src: tech.icon.asset.url,
           alt: tech.name,
           label: tech.label,
         };

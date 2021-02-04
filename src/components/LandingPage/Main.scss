@@ -23,6 +23,9 @@
     @include setup_size(40vw, 90vh);
     padding: 5% 7.5%;
   }
+  .landing-main-image-outer-container {
+    transition: $defaultTransition;
+  }
   .landing-main-image-inner-container {
     @include setup_size(100%, 100%);
     animation: main-image 3s ease-in-out infinite;

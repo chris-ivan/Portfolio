@@ -16,6 +16,7 @@
   &-center {
     transform: translateY(2px);
     @include flex_center(row);
+    position: relative;
     z-index: 20;
     position: relative;
     & > * {
