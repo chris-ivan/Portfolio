@@ -3,6 +3,7 @@ import { Badge } from "./Badge";
 import "./BadgeContainer.scss";
 
 export const BadgeContainer = ({ title, badges, width }) => {
+  console.log(badges);
   return (
     <div className="badge-container" style={width && { width: width }}>
       <h4>{title}</h4>
@@ -13,6 +14,7 @@ export const BadgeContainer = ({ title, badges, width }) => {
             alt={badge.alt}
             label={badge.label}
             key={badge.label}
+            src={badge.src}
           />
         ))}
       </div>

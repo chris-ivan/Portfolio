@@ -15,7 +15,7 @@ import VideoDecor from "../images/decorations/video.svg";
 import LaptopDecor from "../images/png/laptop.png";
 import { Init } from "../components/Animations/Init";
 
-const emailUrl = "https://api.chris-ivan.cyou/mail/sendEmail";
+const emailUrl = "https://api.chris-ivan.studio/mail/sendEmail";
 
 const text = (
   <p>

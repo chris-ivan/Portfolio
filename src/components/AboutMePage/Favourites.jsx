@@ -29,7 +29,7 @@ const favourites = [
   },
   {
     left: "Music",
-    right: ["Aimer", "Yorushika"],
+    right: ["Aimer", "Yorushika", "milet"],
   },
   {
     left: "To Learn List",
