@@ -80,6 +80,7 @@ a {
 }
 
 .decorations {
+  transition: $defaultTransition;
   position: absolute;
   &-front,
   &-semi-front {
