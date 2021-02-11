@@ -15,17 +15,9 @@ import "./pages/Template/_setup.scss";
 import { Navbar } from "./components/Navbar/Navbar";
 import { SocialMedia } from "./components/SocialMedia/SocialMedia";
 import ReactGA from "react-ga";
-// import { createBrowserHistory } from "history";
 
 function App() {
   const location = useLocation();
-
-  // const history = createBrowserHistory();
-  // history.listen((loc) => {
-  //   ReactGA.initialize("UA-186027151-2");
-  //   ReactGA.set({ page: loc.pathname });
-  //   ReactGA.pageview(loc.pathname);
-  // });
 
   useEffect(() => {
     // ReactGA.initialize("UA-186027151-2"); 18119025

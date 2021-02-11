@@ -3,7 +3,7 @@
 
 .badge-container {
   @include flex_center(column);
-  transition: $defaultTransition;
+  transition: border-color $transitionDuration $transitionTween;
   border: 1px solid $darkGrey;
   width: 80vw;
   max-width: 1200px;

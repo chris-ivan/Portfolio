@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import sanityClient from "../client";
 import BlockContent from "@sanity/block-content-to-react";
+import { motion } from "framer-motion";
 import "./ProjectPage.scss";
 
 import { Carousel } from "../components/ProjectPage/Carousel";
@@ -17,7 +17,7 @@ import VideoDecor from "../images/decorations/video.svg";
 import LaptopDecor from "../images/png/laptop.png";
 import { Init } from "../components/Animations/Init";
 
-import { motion } from "framer-motion";
+import {fetchProject} from "../shared/API"
 
 export const ProjectPage = () => {
   const [projectData, setProjectData] = useState(null);
@@ -25,35 +25,7 @@ export const ProjectPage = () => {
 
   useEffect(() => {
     setProjectData(null);
-    sanityClient
-      .fetch(
-        `*[_type == "project" && slug.current == $id][0]{
-          title,
-        slug,
-  			carousel[]{asset->{url}},
-  			body,
-				"tech": *[ _type == "badge" && _id in ^.technologies[]._ref ]{
-          icon{asset->{url}},
-          name,
-  				label
-				},
-				link[]
-				{
-          url,
-          "badge": *[ _type == "badge" && _id == ^.badge._ref ][0]{
-          // icon{asset->{url}},
-          name,
-  				label
-        },
-        },
-				"allProjects": *[_type == "project"]|order(id asc){
-        	slug,
-          title,
-          isComingSoon
-        },
-    }`,
-        { id }
-      )
+      fetchProject(id)
       .then((data) => {
         setProjectData(data);
       })
@@ -160,7 +132,7 @@ export const ProjectPage = () => {
           </div>
           {projectData && (
             <Init>
-              <div className="projectPage-content">
+              <article className="projectPage-content">
                 <Init>
                   <H2>{projectData.title}</H2>
                 </Init>
@@ -182,7 +154,7 @@ export const ProjectPage = () => {
                   nextProject={getNextProject()}
                   links={getLinkArray()}
                 />
-              </div>
+              </article>
             </Init>
           )}
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import BlockContent from "@sanity/block-content-to-react";
 import {
   EASTER_EGG_ACTION,
   sendAnalyticsAction,
@@ -29,7 +30,7 @@ export const ProjectPreview = ({
   handleResize,
 }) => {
   return (
-    <div className="project-preview">
+    <section className="project-preview">
       <div className="project-preview-inner">
         <div className="project-preview-screenshoot">
           <Init delay={0.6}>
@@ -91,7 +92,7 @@ export const ProjectPreview = ({
         </div>
         <div className="project-preview-content">
           <Init delay={0.4}>
-            {desc}
+            <BlockContent blocks={desc} />
             <div className="project-preview-buttons">
               <Button
                 icon={Web}
@@ -126,6 +127,6 @@ export const ProjectPreview = ({
           </Init>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

@@ -91,16 +91,34 @@ export default {
       of: [{ type: "linkBadge" }],
     },
     {
-      name: "prev",
-      title: "Previous Project",
-      type: "reference",
-      to: { type: "project" },
+      name: "displayAtHomePage",
+      title: "Display at Home Page",
+      type: "boolean",
     },
     {
-      name: "next",
-      title: "Next Project",
-      type: "reference",
-      to: { type: "project" },
+      name: "homeLoadingBackground",
+      title: "Loading Background for Home Page",
+      type: "image",
+    },
+    {
+      name: "homeBackground",
+      title: "Background for Home Page",
+      type: "image",
+    },
+    {
+      name: "homePagePreviewText",
+      title: "Home Page Preview Text",
+      type: "blockContent",
+    },
+    {
+      name: "mobileImage",
+      title: "Mobile Image",
+      type: "image",
+    },
+    {
+      name: "desktopImage",
+      title: "Desktop Image",
+      type: "image",
     },
   ],
 

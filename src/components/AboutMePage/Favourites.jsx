@@ -6,45 +6,10 @@ import { useTransform, Frame } from "framer";
 import Laptop from "../../images/png/laptop.png";
 import { Init } from "../Animations/Init";
 
-const favourites = [
-  {
-    left: "Websites",
-    right: ["Github", "Freepik", "Stack Overflow", "Medium"],
-  },
-  {
-    left: "Colors",
-    right: ["Black", "Blue", "White"],
-  },
-  {
-    left: "Games",
-    right: ["none"],
-  },
-  {
-    left: "Emoji",
-    right: [":v"],
-  },
-  {
-    left: "Hobbies",
-    right: ["Manga", "Badminton", "Watching random videos on YouTube"],
-  },
-  {
-    left: "Music",
-    right: ["Aimer", "Yorushika", "milet"],
-  },
-  {
-    left: "To Learn List",
-    right: ["Django", "SQL", "NextJS"],
-  },
-  {
-    left: "Current Concern",
-    right: [`I need more sleep :"`],
-  },
-];
-
-export const Favourites = ({ pageY }) => {
+export const Favourites = ({ pageY, data }) => {
   const laptopY = useTransform(pageY, (value) => value / 3);
   return (
-    <div className="favourites-container">
+    <section className="favourites-container">
       <Frame
         background={""}
         width="100%"
@@ -67,13 +32,13 @@ export const Favourites = ({ pageY }) => {
         <div className="favourites-table">
           <table>
             <tbody>
-              {favourites.map((fav) => (
-                <tr key={fav.left}>
+              {data.map((fav) => (
+                <tr key={fav.title}>
                   <td className="left-table">
-                    <p>{fav.left}</p>
+                    <p>{fav.title}</p>
                   </td>
                   <td className="right-table">
-                    {fav.right.map((ans) => (
+                    {fav.content.map((ans) => (
                       <p key={ans}>{ans}</p>
                     ))}
                   </td>
@@ -83,6 +48,6 @@ export const Favourites = ({ pageY }) => {
           </table>
         </div>
       </Init>
-    </div>
+    </section>
   );
 };

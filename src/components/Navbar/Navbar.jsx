@@ -5,7 +5,7 @@ import "./Navbar.scss";
 
 export const Navbar = () => {
   return (
-    <div className="navbar-container">
+    <nav className="navbar-container">
       <div className="navbar">
         {routes.map(
           (route) =>
@@ -23,6 +23,6 @@ export const Navbar = () => {
             )
         )}
       </div>
-    </div>
+    </nav>
   );
 };

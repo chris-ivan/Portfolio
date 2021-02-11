@@ -1,4 +1,3 @@
-import React from "react";
 import "./Heading.scss";
 
 export const H2 = ({ children }) => {

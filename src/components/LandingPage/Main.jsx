@@ -54,7 +54,7 @@ export const Main = ({ pageY }) => {
   };
 
   return (
-    <div
+    <section
       className="main-container"
       onMouseEnter={handleCursorEnter}
       onMouseMove={handleCursor}
@@ -193,6 +193,6 @@ export const Main = ({ pageY }) => {
           />
         </Frame>
       </div>
-    </div>
+    </section>
   );
 };

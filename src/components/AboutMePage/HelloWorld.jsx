@@ -66,7 +66,7 @@ export const HelloWorld = ({ pageY, handleResize }) => {
   }, []);
 
   return (
-    <div className="hello-world">
+    <section className="hello-world">
       <Frame
         background={""}
         width="20%"
@@ -138,6 +138,6 @@ export const HelloWorld = ({ pageY, handleResize }) => {
           </Init>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };

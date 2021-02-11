@@ -15,4 +15,10 @@ export default {
       type: "url",
     },
   ],
+  preview: {
+    select: {
+      title: "url",
+      media: "badge.icon",
+    },
+  },
 };

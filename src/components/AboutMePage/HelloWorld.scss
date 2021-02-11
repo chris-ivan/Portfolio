@@ -30,7 +30,8 @@
     }
     img {
       pointer-events: none;
-      transition: $defaultTransition;
+      transition: filter $transitionDuration $transitionTween,
+        $defaultTransition;
     }
   }
 }

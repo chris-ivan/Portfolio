@@ -31,7 +31,8 @@
     animation: main-image 3s ease-in-out infinite;
     transition: $defaultTransition;
     img {
-      transition: $defaultTransition;
+      transition: $defaultTransition,
+        filter $transitionDuration $transitionTween;
     }
     &:hover {
       img {

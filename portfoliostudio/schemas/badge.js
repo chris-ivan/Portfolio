@@ -7,6 +7,7 @@ export default {
       name: "name",
       title: "Name",
       type: "string",
+      description: "[TECH, SOCIAL, TEXT]_NAME",
     },
     {
       name: "label",

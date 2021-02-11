@@ -12,6 +12,9 @@ import blockContent from "./blockContent";
 import badge from "./badge";
 import project from "./project";
 import linkBadge from "./linkBadge";
+import badgeContainer from "./badgeContainer";
+import trivia from "./trivia";
+import musicRecommendation from "./musicRecommendation";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -33,5 +36,8 @@ export default createSchema({
     // { type: 'typename' } in other document schemas
     blockContent,
     linkBadge,
+    badgeContainer,
+    trivia,
+    // musicRecommendation,
   ]),
 });
