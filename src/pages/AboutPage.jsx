@@ -16,6 +16,7 @@ import {
 } from "../shared/functions";
 
 import { fetchTrivia } from "../shared/API";
+import { Loading } from "../components/Loading/Loading";
 
 export const AboutPage = () => {
   const y = useMotionValue(10);
@@ -49,7 +50,7 @@ export const AboutPage = () => {
       exit={{ opacity: 0 }}
       onTouchStart={handleDesktopTouch}
     >
-      {isFetchComplete && (
+      {isFetchComplete ? (
         <Scroll
           width="100%"
           height="100%"
@@ -70,6 +71,8 @@ export const AboutPage = () => {
             <Footer />
           </Template>
         </Scroll>
+      ) : (
+        <Loading />
       )}
     </motion.div>
   );

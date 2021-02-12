@@ -17,7 +17,8 @@ import VideoDecor from "../images/decorations/video.svg";
 import LaptopDecor from "../images/png/laptop.png";
 import { Init } from "../components/Animations/Init";
 
-import {fetchProject} from "../shared/API"
+import { fetchProject } from "../shared/API";
+import { Loading } from "../components/Loading/Loading";
 
 export const ProjectPage = () => {
   const [projectData, setProjectData] = useState(null);
@@ -25,7 +26,7 @@ export const ProjectPage = () => {
 
   useEffect(() => {
     setProjectData(null);
-      fetchProject(id)
+    fetchProject(id)
       .then((data) => {
         setProjectData(data);
       })
@@ -130,7 +131,7 @@ export const ProjectPage = () => {
               className="decorations decorations-back decorations-project-laptop"
             />
           </div>
-          {projectData && (
+          {projectData ? (
             <Init>
               <article className="projectPage-content">
                 <Init>
@@ -156,6 +157,8 @@ export const ProjectPage = () => {
                 />
               </article>
             </Init>
+          ) : (
+            <Loading />
           )}
         </div>
       </Template>

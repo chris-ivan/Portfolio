@@ -105,7 +105,7 @@ export const HelloWorld = ({ pageY, handleResize }) => {
       </div>
       <div className="hello-world-image">
         <div className="hello-world-image-hidden-button">
-          <Init delay={0.6}>
+          <Init delay={1}>
             <Button
               label="Don't Click"
               onClick={handleHiddenClick}
