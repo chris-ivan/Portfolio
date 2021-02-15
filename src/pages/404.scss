@@ -118,8 +118,15 @@
   }
 }
 
-@media screen and (max-width: $breakpoint-small) {
-  .circle {
-    opacity: 0.2;
+@media screen and (max-width: $breakpoint-medium) {
+  .circle-container {
+    .circle {
+      opacity: 0.25;
+    }
+  }
+  .page404 {
+    &-content {
+      @include setup_size(80%, auto);
+    }
   }
 }

@@ -5,7 +5,7 @@ import "./404.scss";
 import { DoubleButton } from "../components/Button/DoubleButton";
 
 export const Page404 = () => {
-  const bgObjectCount = 100;
+  const bgObjectCount = 50;
   let arr = [];
   for (let i = 0; i < bgObjectCount; i++) {
     arr.push(i);
@@ -21,15 +21,15 @@ export const Page404 = () => {
           ))}
         </div>
         <div className="page404-content">
-          <H2>Oops, Page not Found</H2>
+          <H2>Oops,404</H2>
           <p>
             Sorry, but this is not the page you are looking for. Maybe you can
             find them in these pages. Have fun!
           </p>
           <DoubleButton
-            label1="Back to Home"
+            label1="Home"
             link1="/"
-            label2="All Projects"
+            label2="Projects"
             link2="/project"
           />
         </div>
