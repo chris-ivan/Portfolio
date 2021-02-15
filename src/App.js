@@ -42,7 +42,7 @@ function App() {
             redirect={route.redirect}
           />
         ))}
-        <Redirect to="/" />
+        <Redirect to="/404" />
       </Switch>
       {/* </AnimatePresence> */}
       {/* </Router> */}

@@ -30,6 +30,12 @@ const ContactPage = lazy(() =>
   }))
 );
 
+const Page404 = lazy(() =>
+  import("../pages/404").then((module) => ({
+    default: module.Page404,
+  }))
+);
+
 // update di button kalo dipake
 export const routes = [
   {
@@ -56,5 +62,10 @@ export const routes = [
     label: "Contact",
     path: "/contact",
     component: ContactPage,
+  },
+  {
+    label: "",
+    path: "/404",
+    component: Page404,
   },
 ];
