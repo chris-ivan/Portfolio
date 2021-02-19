@@ -1,7 +1,7 @@
 import React from "react";
 import "./Loading.scss";
 
-export const Loading = () => {
+export const Loading = ({ msg }) => {
   return (
     <div className="loading-container">
       <div className="lds-ellipsis">
@@ -10,6 +10,7 @@ export const Loading = () => {
         <div></div>
         <div></div>
       </div>
+      <p>{msg}</p>
     </div>
   );
 };

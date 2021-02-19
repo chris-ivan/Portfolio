@@ -3,7 +3,7 @@
 
 .loading-container {
   @include setup_size(100%, 100%);
-  @include flex_center(row);
+  @include flex_center(column);
   transition: $defaultTransition;
 }
 .lds-ellipsis {

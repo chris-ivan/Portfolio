@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+
+import { motion } from "framer-motion";
+import { useMotionValue, Scroll } from "framer";
+
 import { Template } from "./Template/Template";
 import { Main } from "../components/LandingPage/Main";
 import { TechStack } from "../components/LandingPage/TechStack";
@@ -6,9 +10,6 @@ import { LatestProjects } from "../components/LandingPage/LatestProjects";
 import { Footer } from "../components/LandingPage/Footer";
 import { DoubleButton } from "../components/Button/DoubleButton";
 import { Loading } from "../components/Loading/Loading";
-
-import { motion } from "framer-motion";
-import { useMotionValue, Scroll } from "framer";
 
 import {
   handleDesktopTouch,
@@ -86,7 +87,7 @@ export const LandingPage = () => {
           />
         </Scroll>
       ) : (
-        <Loading />
+        <Loading msg="Fetching some data..." />
       )}
     </motion.div>
   );
