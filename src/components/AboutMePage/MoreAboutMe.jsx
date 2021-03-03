@@ -25,7 +25,7 @@ const Decoration = ({ pageY }) => {
       >
         <img
           src={Image}
-          alt="more-decor"
+          alt=""
           className="decorations decorations-back decorations-more-image"
           style={{ width: "30vw", maxWidth: "300px" }}
         />
@@ -40,7 +40,7 @@ const Decoration = ({ pageY }) => {
       >
         <img
           src={Grid}
-          alt="more-decor"
+          alt=""
           className="decorations decorations-back decorations-more-grid"
           style={{ width: "70vw", maxWidth: "none" }}
         />

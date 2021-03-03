@@ -81,7 +81,7 @@ export const LandingPage = () => {
         >
           <LandingPageContent
             y={y}
-            setIsMobile={setisMobile}
+            setisMobile={setisMobile}
             techStack={techStack}
             homePageProjects={homePageProjects}
           />

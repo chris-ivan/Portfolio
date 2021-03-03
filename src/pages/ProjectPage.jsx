@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import BlockContent from "@sanity/block-content-to-react";
 import { motion } from "framer-motion";
@@ -23,33 +23,34 @@ import { Loading } from "../components/Loading/Loading";
 export const ProjectPage = () => {
   const [projectData, setProjectData] = useState(null);
   const { id } = useParams();
+  const history = useHistory();
 
   useEffect(() => {
     setProjectData(null);
     fetchProject(id)
       .then((data) => {
-        setProjectData(data);
+        if (!data.title) history.push("/404");
+        else setProjectData(data);
       })
       .catch((err) => {
-        console.log(err);
+        console.error(err);
         toast.dark(
           "Unfortunately, I can't afford regular CMS pricing, so we'll have to wait a month until the monthly CMS usage is restart :( "
         );
       });
-  }, [id]);
+  }, [id, history]);
 
   const getTechArray = () => {
     const techArray = [];
-    projectData &&
-      projectData.tech.forEach((tech) => {
-        let temp = {
-          // component: badgeIcon[tech.name],
-          src: tech.icon.asset.url,
-          alt: tech.name,
-          label: tech.label,
-        };
-        techArray.push(temp);
-      });
+    projectData?.tech?.forEach((tech) => {
+      let temp = {
+        // component: badgeIcon[tech.name],
+        src: tech.icon.asset.url,
+        alt: tech.name,
+        label: tech.label,
+      };
+      techArray.push(temp);
+    });
     return techArray;
   };
 
@@ -117,21 +118,21 @@ export const ProjectPage = () => {
           <div className="projectPage-decorations">
             <img
               src={GridDecor}
-              alt="decor"
+              alt=""
               className="decorations decorations-back decorations-project-grid"
             />
             <img
               src={VideoDecor}
-              alt="decor"
+              alt=""
               className="decorations decorations-back decorations-project-video"
             />
             <img
               src={LaptopDecor}
-              alt="decor"
+              alt=""
               className="decorations decorations-back decorations-project-laptop"
             />
           </div>
-          {projectData ? (
+          {projectData?.title ? (
             <Init>
               <article className="projectPage-content">
                 <Init>
@@ -158,7 +159,7 @@ export const ProjectPage = () => {
               </article>
             </Init>
           ) : (
-            <Loading />
+            <Loading msg="Fetching project data..." />
           )}
         </div>
       </Template>

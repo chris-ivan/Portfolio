@@ -20,7 +20,7 @@ export const Favourites = ({ pageY, data }) => {
       >
         <img
           src={Laptop}
-          alt="decor-again"
+          alt=""
           className="decorations decorations-back decorations-trivia-laptop"
           style={{ width: "40vw" }}
         />

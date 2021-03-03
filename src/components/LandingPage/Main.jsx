@@ -71,7 +71,7 @@ export const Main = ({ pageY }) => {
         >
           <img
             src={ShardDecor}
-            alt="decor"
+            alt=""
             className="decorations decorations-back decorations-shard"
             style={{ width: "30vw", maxWidth: "300px" }}
           />
@@ -86,7 +86,7 @@ export const Main = ({ pageY }) => {
         >
           <img
             src={ImageDecor}
-            alt="decor"
+            alt=""
             className="decorations decorations-back decorations-image"
             style={{ height: "20vh", maxHeight: "200px" }}
           />
@@ -101,7 +101,7 @@ export const Main = ({ pageY }) => {
         >
           <img
             src={BubbleDecor}
-            alt="decor"
+            alt=""
             className="decorations decorations-back decorations-bubble"
             style={{ width: "40vw", maxWidth: "120px" }}
           />
@@ -136,7 +136,7 @@ export const Main = ({ pageY }) => {
               <Image
                 src={Photo}
                 tinySrc={TinyPhoto}
-                alt="main profile pic"
+                alt="Christopher Ivan Gunardi's photo"
                 rotate
                 shadow
                 progressive
@@ -156,7 +156,7 @@ export const Main = ({ pageY }) => {
         >
           <img
             src={ProfileDecor}
-            alt="decor"
+            alt=""
             className="decorations decorations-semi-front decorations-profile"
             style={{
               height: "20vh",
@@ -167,7 +167,7 @@ export const Main = ({ pageY }) => {
         </Frame>
         <img
           src={AvatarDecor}
-          alt="decor"
+          alt=""
           className="decorations decorations-front decorations-avatar"
           style={{
             transform: `translate(${cursor.x / 20}px, ${cursor.y / -20}px)`,
@@ -183,7 +183,7 @@ export const Main = ({ pageY }) => {
         >
           <img
             src={LoveDecor}
-            alt="decor"
+            alt=""
             className="decorations decorations-front decorations-love"
             style={{
               width: "20vw",
