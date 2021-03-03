@@ -28,7 +28,7 @@ const Decorations = ({ pageY }) => {
       >
         <img
           src={Sphere}
-          alt="sphere"
+          alt=""
           className="decorations decorations-back decorations-sphere"
           style={{ width: "30vw", maxWidth: "200px" }}
         />
@@ -43,7 +43,7 @@ const Decorations = ({ pageY }) => {
       >
         <img
           src={Video}
-          alt="video"
+          alt=""
           style={{ width: "40vw", maxWidth: "300px" }}
           className="decorations decorations-back decorations-video"
         />
@@ -58,7 +58,7 @@ const Decorations = ({ pageY }) => {
       >
         <img
           src={Laptop}
-          alt="laptop"
+          alt=""
           style={{ width: "60vw", maxWidth: "400px" }}
           className="decorations decorations-back decorations-laptop"
         />

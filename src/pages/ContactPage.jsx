@@ -82,18 +82,18 @@ export const ContactPage = () => {
           <div className="contact-decorations">
             <img
               src={GridDecor}
-              alt="decor"
+              alt=""
               className="decorations decorations-back decorations-contact-grid"
               // style={{ width: "30vw", maxWidth: "300px" }}
             />
             <img
               src={VideoDecor}
-              alt="decor"
+              alt=""
               className="decorations decorations-back decorations-contact-video"
             />
             <img
               src={LaptopDecor}
-              alt="decor"
+              alt=""
               className="decorations decorations-back decorations-contact-laptop"
             />
           </div>

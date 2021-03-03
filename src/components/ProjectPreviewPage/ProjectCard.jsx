@@ -25,7 +25,7 @@ export const ProjectCard = ({
         <div className="ongoing-container">
           <Badge
             component={OnGoingIcon}
-            alt="ongoing-icon"
+            alt={`${title} is an ongoing project`}
             label="Ongoing"
             color="#27C93F"
           />
@@ -38,7 +38,7 @@ export const ProjectCard = ({
         <Image
           src={src}
           tinySrc={tinySrc}
-          alt="project-thumbnail"
+          alt={`a thumbnail for ${title}`}
           progressive
         />
       </div>

@@ -22,13 +22,13 @@ export const Button = ({
     <div className="button-content">
       {iconPosition === "left" && (
         <div className="button-icon">
-          <Icon alt="button-icon" />
+          <Icon alt="" />
         </div>
       )}
       {small ? <p>{label}</p> : <h4>{label}</h4>}
       {iconPosition === "right" && (
         <div className="button-icon">
-          <Icon alt="button-icon" />
+          <Icon alt="" />
         </div>
       )}
     </div>

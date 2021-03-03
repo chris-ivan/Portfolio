@@ -40,7 +40,7 @@ export const ProjectPreview = ({
               dragElastic={0.7}
               src={phone}
               className="project-preview-screenshoot-phone"
-              alt="phone"
+              alt={`mobile screenshoot of ${title} website`}
               onDrag={() => {
                 handleResize(false);
               }}
@@ -60,7 +60,7 @@ export const ProjectPreview = ({
               dragElastic={0.7}
               src={tab}
               className="project-preview-screenshoot-tab"
-              alt="tab"
+              alt={`desktop screenshoot of ${title} website`}
               onDrag={() => {
                 handleResize(false);
               }}
@@ -81,7 +81,7 @@ export const ProjectPreview = ({
             src={src}
             tinySrc={tinySrc}
             className="project-preview-image-bg"
-            alt="project-preview"
+            alt={`image preview of ${title} website`}
             progressive
           />
         </div>

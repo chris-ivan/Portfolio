@@ -13,12 +13,12 @@ import GridDecor from "../images/decorations/grid.svg";
 import VideoDecor from "../images/decorations/video.svg";
 import LaptopDecor from "../images/png/laptop.png";
 
-import {fetchAllProjects} from "../shared/API"
+import { fetchAllProjects } from "../shared/API";
 
 export const ProjectPreviewPage = () => {
   const [allProjects, setAllProjects] = useState(null);
   useEffect(() => {
-      fetchAllProjects()
+    fetchAllProjects()
       .then((data) => {
         setAllProjects(data);
       })
@@ -40,17 +40,17 @@ export const ProjectPreviewPage = () => {
         <div className="projectpreviewpage-decorations">
           <img
             src={GridDecor}
-            alt="decor"
+            alt=""
             className="decorations decorations-back decorations-project-grid"
           />
           <img
             src={VideoDecor}
-            alt="decor"
+            alt=""
             className="decorations decorations-back decorations-project-video"
           />
           <img
             src={LaptopDecor}
-            alt="decor"
+            alt=""
             className="decorations decorations-back decorations-project-laptop"
           />
         </div>

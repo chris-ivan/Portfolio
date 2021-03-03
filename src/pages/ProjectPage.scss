@@ -3,6 +3,7 @@
 
 .projectPage {
   @include setup_size(100%, 100%);
+  min-height: 100vh;
   margin-top: 15vh;
   &-content {
     @include flex_center(column);
@@ -44,7 +45,6 @@
 
 @media screen and (max-width: $breakpoint-medium) {
   .projectPage {
-    @include setup_size(100%, 100%);
     margin-top: 10vh;
     h2 {
       margin-bottom: 3vh;
@@ -80,7 +80,6 @@
 
 @media screen and (max-width: $breakpoint-small) {
   .projectPage {
-    @include setup_size(100%, 100%);
     margin: 12vh auto 5vh;
     h2 {
       margin-bottom: 3vh;

@@ -77,7 +77,7 @@ export const HelloWorld = ({ pageY, handleResize }) => {
       >
         <img
           src={ShardDecor}
-          alt="decor"
+          alt=""
           className="decorations decorations-back decorations-hello-shard"
           style={{ width: "60vw", maxWidth: "400px", zIndex: -1 }}
         />
@@ -130,7 +130,7 @@ export const HelloWorld = ({ pageY, handleResize }) => {
             <Image
               src={Photo}
               tinySrc={TinyPhoto}
-              alt="main profile pic"
+              alt="Christopher Ivan Gunardi's photo"
               rotate
               shadow
               progressive
