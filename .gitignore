@@ -20,6 +20,8 @@
 .eslintcache
 eslintcache
 *.eslintcache
+build
+.env
 
 npm-debug.log*
 yarn-debug.log*
