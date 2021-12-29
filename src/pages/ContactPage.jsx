@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 import "./ContactPage.scss";
 
 import { Button } from "../components/Button/Button";
@@ -15,7 +16,7 @@ import VideoDecor from "../images/decorations/video.svg";
 import LaptopDecor from "../images/png/laptop.png";
 import { Init } from "../components/Animations/Init";
 
-const emailUrl = "https://api.chris-ivan.studio/mail/sendEmail";
+// const emailUrl = "https://api.chris-ivan.studio/mail/sendEmail";
 
 const text = (
   <p>
@@ -38,8 +39,13 @@ export const ContactPage = () => {
   const sendEmail = (data) => {
     setLoading(true);
     sendAnalyticsAction(CONTACT_ACTION, "Sending a valid email");
-    axios
-      .post(emailUrl, data)
+    emailjs
+      .send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        data,
+        process.env.REACT_APP_EMAILJS_USER_ID
+      )
       .then(() => {
         toast.dark("Thank you! I will reply to you soon!");
         setName({ value: "", isValid: false });
@@ -60,9 +66,9 @@ export const ContactPage = () => {
     sendAnalyticsAction(CONTACT_ACTION, "Clicked the CTA");
     const isContentValid = name.isValid && email.isValid && content.isValid;
     const data = {
-      name: name.value,
-      email: email.value,
-      content: content.value,
+      from_name: name.value,
+      from_email: email.value,
+      message: content.value,
     };
     if (!isContentValid) {
       toast.dark("Oops! Please complete the form!");
